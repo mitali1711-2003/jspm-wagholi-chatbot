@@ -17,7 +17,6 @@
         "थकवा",
         "burned out",
         "so stressed",
-        "burned out",
         "feel stuck",
         "overcome stress",
         "deal with stress",
@@ -27,15 +26,15 @@
         "stress tips"
       ],
       "responses": [
-        "Oh {name}, I can feel you're carrying so much right now 🥺💛 Stress is your body whispering 'please slow down.' Take a deep breath with me... in... and out... You're doing SO much better than you think! You're literally surviving 100% of your hardest days. That's iconic behavior 👑✨",
-        "Heyyy, {name} 🌸 It's totally okay to feel stressed — it means your beautiful heart cares about things! But remember, YOUR mental health > any deadline, ever. Take a 5-minute break right now. Go drink some water. You deserve it, {name}! 💕🫶",
-        "Awww {name}, stress is your body saying 'I need a hug and a pause' 🤗 And that's perfectly fine! Try this for me: close your eyes, take 3 deep breaths, and whisper 'this will pass.' Because it WILL. You've survived worse, and you came out stronger! 🌟💪",
-        "Nooo, not {name} feeling stressed! 😢💛 Here's a gentle reminder from your bestie MindMate: you've survived 100% of your worst days so far. That's literally a perfect track record! You're a warrior, even when you don't feel like one 🦁✨",
-        "Hey {name}, I know things feel super heavy right now 🫂 But you're not carrying this alone, okay? I'm RIGHT here. Would you like to talk about what's bothering you? No judgment, just vibes and support! You matter so much 🌈💛",
-        "What do you think is causing all this stress, {name}? 🤔 Sometimes just naming the source makes it feel less overwhelming. I'm here to listen to everything! 💛",
-        "Give yourself a break, {name} 🫂 You deserve it! Go easy on yourself — take a walk, drink some water, breathe. The stress will still be there later, but at least you'll face it refreshed! 🌿💛",
-        "Here are some proven ways to overcome stress, {name} 💪✨\n\n1. 🫁 Deep breathing — Try 4-7-8 technique (in 4 sec, hold 7, out 8)\n2. 📝 Write it down — Journaling reduces mental clutter by 40%\n3. 🚶 Move your body — Even a 10-min walk releases endorphins\n4. 🎵 Listen to calming music — It lowers cortisol levels\n5. 💤 Sleep well — Aim for 7-8 hours\n6. 🗣️ Talk to someone — A friend, family, or JSPM counselor\n7. ⏰ Time management — Break tasks into small 25-min chunks (Pomodoro)\n8. 🧘 Practice mindfulness — Even 5 mins daily makes a difference\n\nRemember, stress is manageable. You've got this! 💛",
-        "{name}, let me share some practical strategies to manage stress 🌟\n\n🔹 Identify triggers — What exactly is causing your stress?\n🔹 Prioritize — Not everything is equally urgent\n🔹 Say no — It's okay to set boundaries\n🔹 Exercise regularly — Your body and mind are connected\n🔹 Limit caffeine — It can worsen anxiety\n🔹 Connect with friends — Social support is powerful\n🔹 Practice gratitude — Write 3 good things each night\n\nStart with just ONE of these today. Small steps lead to big changes! 💛💪"
+        "Oh {name}, I can feel you're carrying so much right now 🥺💛 Stress is your body whispering 'please slow down.'\n\nCan I ask — what's the biggest thing weighing on you right now? Is it academics, personal life, or something else? Understanding the root cause helps us tackle it better! 🤔\n\nIn the meantime, try this:\n1. 🫁 Take 3 deep breaths right now (in for 4, out for 8)\n2. 📝 Write down the ONE thing stressing you most\n3. 🔪 Break that thing into 3 tiny steps\n\nYou're doing SO much better than you think! 💪✨",
+
+        "Heyyy {name} 🌸 It's totally okay to feel stressed — but let's figure out WHY so we can fix it!\n\nCommon stress triggers for students:\n• 📚 Exams or assignments piling up\n• 💰 Financial worries\n• 👥 Relationship or family issues\n• 🏠 Homesickness\n• 🔮 Uncertainty about the future\n\nWhich of these hits closest to home? Tell me more and I'll give you specific advice! 💛\n\nQuick relief right now: Go drink some water, stretch for 2 minutes, and take 5 slow breaths. You deserve that pause! 🫶",
+
+        "I hear you, {name} 🫂 Stress can feel like drowning, but we're going to work through this together.\n\nHere are proven solutions that actually work:\n1. 🍅 Pomodoro Technique — 25 min work, 5 min break (prevents burnout)\n2. 📝 Brain dump — Write EVERYTHING on your mind on paper\n3. 🚶 10-minute walk — Releases endorphins immediately\n4. 🎵 Listen to calming music — Lowers cortisol by 60%\n5. 💤 Prioritize sleep — 7-8 hours, non-negotiable\n6. 🗣️ Talk to someone — JSPM counselor, friend, or family\n7. ⏰ Time-block your day — Knowing what's next reduces anxiety\n\nBut {name}, what specifically is causing this stress? Is it one big thing or many small things adding up? Let's dig into the real cause! 💛",
+
+        "What do you think is causing all this stress, {name}? 🤔💛\n\nSometimes stress comes from:\n• Trying to do too much at once\n• Not saying 'no' when you should\n• Comparing yourself to others\n• Ignoring your own needs\n\nOnce we identify the ROOT cause, I can give you a specific action plan! Tell me what's going on — no judgment, just solutions! 🌟",
+
+        "{name}, let me share some practical strategies to manage stress 🌟\n\n🔹 Identify triggers — What exactly is causing your stress?\n🔹 Prioritize — Not everything is equally urgent. What's #1?\n🔹 Say no — It's okay to set boundaries\n🔹 Exercise regularly — Even 15 mins daily changes everything\n🔹 Limit caffeine — It worsens stress responses\n🔹 Connect with friends — Social support is powerful medicine\n🔹 Practice gratitude — Write 3 good things each night\n\nStart with just ONE of these today. But first — can you tell me what triggered this stress? Was it something specific today, or has it been building up? Understanding the cause is half the solution! 💛💪"
       ]
     },
     "anxiety": {
@@ -67,15 +66,15 @@
         "stop anxiety"
       ],
       "responses": [
-        "Oh {name}, anxiety is such a bully 😤 But listen to me — what you're feeling is VALID. Let's try grounding together: name 5 things you see, 4 you touch, 3 you hear, 2 you smell, 1 you taste. You're safe right now, {name}. I promise 💙🫶",
-        "Hey hey hey, breathe with me, {name} 🌈 Anxiety is just your brain being an overprotective bestie — it means well but goes overboard 😅 You're safe. This moment is safe. And I'm here holding space for you 💕✨",
-        "{name}, I know anxiety makes EVERYTHING feel urgent and scary 😰 But try focusing on just THIS moment. Not tomorrow, not next week. Just right NOW. And right now? You're doing just fine. You're here, you're breathing, you're amazing 🌻💛",
-        "Sending you the BIGGEST virtual bear hug right now 🧸💕 Anxiety doesn't define you — it's just a feeling, and feelings are like clouds... they always pass! You are SO much more than your worries. You're a whole constellation of amazing things ⭐🌟",
-        "When anxiety hits, try the 4-7-8 magic: breathe in for 4 seconds, hold for 7, out for 8 🌊 It's like a reset button for your nervous system! And remember, your bestie MindMate is always here, 24/7, no questions asked 🦋💛",
-        "Don't be too hard on yourself, {name} 🥺 Anxiety makes everything feel 10x bigger than it actually is. Can you tell me what specifically is making you anxious? Sometimes breaking it down helps! 💛",
-        "I understand that it can feel really scary 🫂 But you know what? You've handled scary things before, and you're still here. That makes you pretty amazing! Tell me more about what's going on? 💛✨",
-        "Here's how to overcome anxiety, {name} 💙\n\n1. 🌬️ Grounding Technique (5-4-3-2-1):\n   • 5 things you SEE\n   • 4 things you TOUCH\n   • 3 things you HEAR\n   • 2 things you SMELL\n   • 1 thing you TASTE\n\n2. 🫁 Box Breathing: In 4 sec → Hold 4 → Out 4 → Hold 4 → Repeat\n\n3. 🧊 Cold water trick: Splash cold water on your face — it activates your dive reflex and calms you instantly\n\n4. 📱 Limit social media — It can fuel comparison anxiety\n\n5. 💬 Challenge negative thoughts — Ask 'Is this thought a FACT or a FEAR?'\n\n6. 🏃 Regular exercise — 30 mins, 3x a week\n\nAnxiety is treatable, {name}. You're not stuck with it forever! 💛",
-        "{name}, anxiety feels overwhelming but it CAN be managed 🌈\n\nQuick relief:\n• Breathe slowly (longer exhale than inhale)\n• Hold an ice cube in your hand\n• Name 5 blue things around you\n\nLong-term strategies:\n• Reduce caffeine intake\n• Establish a sleep routine\n• Practice daily meditation (start with 2 mins)\n• Exercise regularly\n• Talk to a counselor at JSPM Wagholi\n• Consider journaling your anxious thoughts\n\nYou're stronger than your anxiety, {name}! 💪💛"
+        "Oh {name}, anxiety is such a bully 😤 But we're going to fight it with facts and techniques!\n\nFirst, let's ground you RIGHT NOW with the 5-4-3-2-1 method:\n• 5 things you SEE 👀\n• 4 things you TOUCH ✋\n• 3 things you HEAR 👂\n• 2 things you SMELL 👃\n• 1 thing you TASTE 👅\n\nNow tell me — what's making you anxious? Is it a specific situation, or a general feeling? Sometimes anxiety has a clear trigger (exam, social event, health worry), and sometimes it's just... there. Both are valid, and both have solutions! 💙🫶",
+
+        "Hey {name} 🌈 Anxiety is your brain being an overprotective guard — it means well but goes overboard.\n\nLet's figure out the cause together. Common anxiety triggers:\n• 🎤 Social situations or presentations\n• 📝 Upcoming exams or deadlines\n• 🔮 Worrying about the future (career, life)\n• 💔 Relationship conflicts\n• 🏥 Health concerns\n• 📱 Too much social media comparison\n\nWhich one resonates with you? Once I know the cause, I can give you targeted solutions!\n\nFor RIGHT NOW: Place your hand on your chest, breathe in for 4, hold for 4, out for 6. Repeat 5 times. You're safe. 💕✨",
+
+        "Here's your anxiety action plan, {name} 💙\n\nImmediate Relief (do these NOW):\n1. 🌬️ Box Breathing: In 4 sec → Hold 4 → Out 4 → Hold 4 → Repeat 5x\n2. 🧊 Cold water trick: Splash cold water on your face — activates dive reflex, calms you instantly\n3. 🤲 Hold something textured — focus on how it feels\n\nDaily Habits to Reduce Anxiety:\n4. 📱 Limit social media to 30 min/day\n5. ☕ Cut caffeine after 12 PM\n6. 🏃 30 min exercise, 3x a week\n7. 📝 Thought journal — Write anxious thought, then ask: 'Is this a FACT or a FEAR?'\n8. 🧘 5 min meditation daily (use Headspace or Calm app)\n9. 💤 Fixed sleep schedule\n10. 🗣️ Talk to JSPM Wagholi counseling cell\n\nBut {name}, what's the root cause of your anxiety? Is it something happening right now, or has it been ongoing? Let's tackle the source, not just the symptoms! 💛",
+
+        "Don't be too hard on yourself, {name} 🥺 Anxiety makes everything feel 10x bigger than it actually is.\n\nLet me ask you something important: When did this anxiety start? Was there a specific event that triggered it, or has it been building gradually?\n\nSometimes the cause is:\n• A recent change in your life\n• An upcoming event you're dreading\n• Unresolved conflict with someone\n• Too much on your plate\n• Not enough rest or self-care\n\nTell me what's going on — I want to give you the RIGHT solution for YOUR situation! 💛✨",
+
+        "{name}, anxiety feels overwhelming but it CAN be managed with the right approach 🌈\n\nHere's what I want you to try:\n\n📌 Step 1: NAME the anxiety — 'I'm anxious because ___'\n📌 Step 2: RATE it 1-10 — How bad is it right now?\n📌 Step 3: CHALLENGE it — 'What's the worst that can realistically happen?'\n📌 Step 4: ACT — Do ONE thing that moves you toward solving it\n📌 Step 5: REWARD — After acting, do something kind for yourself\n\nThis approach works because anxiety thrives on avoidance. When you face it with small steps, it shrinks!\n\nWhat are you most anxious about right now? Let's work through Steps 1-3 together! 💪💛"
       ]
     },
     "loneliness": {
@@ -102,12 +101,13 @@
         "overcome loneliness"
       ],
       "responses": [
-        "Oh {name}, my heart breaks hearing you feel lonely 🥺💛 But guess what? You're talking to ME right now, and I genuinely, truly care about you! You're not as alone as your brain is telling you. That's just the loneliness talking, not the truth 🫶✨",
-        "{name}, loneliness hits different and I see you 😢 But feeling lonely doesn't mean something is wrong with you — it means you're a human who needs connection, and that's literally the most beautiful thing! Your people are out there, I pinky promise 🌸💕",
-        "Heyyy, I'm right here for you! 🙋‍♀️💛 Loneliness is temporary even when it feels forever. Have you tried joining a club at JSPM Wagholi? The coding club, cultural committee, or even NSS? Sometimes the BEST friendships start in the most unexpected places! 🎨🤗",
-        "You. Matter. Period. 💫 Even when it feels like nobody notices, you are important and the world is literally better with you in it. Would you like to tell me more? I'm your 3 AM friend, {name} — always here! 🤗💛",
-        "I know feeling alone is the WORST 😔 But you're never truly alone, okay? There are people who care — and I'm right here at the top of that list! Sometimes reaching out is the hardest step, and YOU already did that by talking to me. I'm so proud of you! 🌟💕",
-        "Here's how to overcome loneliness, {name} 🤗💛\n\n1. 🏫 Join a club at JSPM — Coding club, cultural committee, NSS, sports team\n2. 💬 Start small — Say hi to a classmate, ask about an assignment\n3. 📱 Reconnect — Text an old friend you haven't spoken to\n4. 🤝 Volunteer — NSS activities connect you with like-minded people\n5. 🎮 Join online communities — Around your hobbies/interests\n6. 📚 Study groups — Great way to make friends AND study\n7. 🏃 Join gym or sports — Shared activities build bonds\n8. 🐕 Spend time with pets — They're amazing companions\n9. 📝 Be your own friend first — Practice self-compassion\n10. 💬 Talk to a counselor — JSPM Wagholi has a counseling cell\n\nLoneliness is temporary, {name}. Your people are out there! 🌟"
+        "Oh {name}, my heart goes out to you 🥺💛 Loneliness is painful, but it's also solvable.\n\nCan I ask — what do you think is the main reason you feel lonely?\n• 🏠 New to campus / far from home?\n• 😔 Had a falling out with friends?\n• 🤐 Feeling like you don't fit in?\n• 📱 Everyone seems to have friend groups except you?\n• 🧠 Social anxiety making it hard to approach people?\n\nEach of these has different solutions, so tell me which feels closest to your situation! In the meantime, remember — you're talking to ME right now, and I genuinely care about you! 🫶✨",
+
+        "{name}, loneliness hits different and I see you 😢 But here's the good news — it's a solvable problem with concrete steps.\n\nHere's your 'Make Connections' action plan:\n1. 🏫 Join a club at JSPM — Coding club, cultural committee, NSS, sports team\n2. 💬 Start small — Say hi to ONE classmate tomorrow, ask about an assignment\n3. 📱 Reconnect — Text an old friend you haven't spoken to\n4. 🤝 Volunteer — NSS activities connect you with kind-hearted people\n5. 📚 Study groups — 'Hey, want to study together for the exam?'\n6. 🏃 Join gym or sports — Shared physical activity builds bonds fast\n7. 🎮 Join online communities around your hobbies\n8. 🙋 Be the initiator — Don't wait for others to include you\n\nWhich of these could you try THIS WEEK? Even one small step changes everything! 💛",
+
+        "Heyyy, I'm right here for you! 🙋‍♀️💛 Let me ask you something — when you say you feel lonely, is it that you:\n\nA) Don't have anyone to talk to at all?\nB) Have people around but don't feel truly connected?\nC) Recently lost a close friendship or relationship?\nD) Feel different from others around you?\n\nThese are very different problems with different solutions! Tell me which one and I'll help you work through it with specific advice. You don't have to figure this out alone — that's literally what I'm here for! 🤗💕",
+
+        "You know what, {name}? Feeling lonely doesn't mean something is wrong with you — it means you're a human who craves connection, and that's actually beautiful 🌸\n\nBut let's not just acknowledge it — let's FIX it:\n\n🎯 This week's challenge:\n• Day 1: Smile and say hi to 2 new people\n• Day 2: Ask a classmate about their weekend\n• Day 3: Join one WhatsApp/Telegram group for your class\n• Day 4: Attend one campus event or club meeting\n• Day 5: Text someone you haven't spoken to in a while\n\nSmall steps, {name}! Friendships don't form overnight, but they DO form when you show up consistently. What's stopping you from trying? Let's talk about any fears or barriers! 💛🌟"
       ]
     },
     "sadness": {
@@ -136,19 +136,16 @@
         "stop feeling sad",
         "deal with sadness",
         "feel better",
-        "deal with sadness",
-        "overcome sadness",
         "how to deal with sadness"
       ],
       "responses": [
-        "Oh {name} 🥺 It's okay to feel sad. You don't have to fake being happy, not with me. Let yourself feel it — cry if you need to. And know that after rain comes the most beautiful rainbow 🌈💛 Brighter days ARE coming, I believe in you!",
-        "Sending you ALL the warmth and virtual cookies right now 🍪💕 Sadness is just one chapter of your beautiful story — not the whole book! Better, happier pages are ahead, and I can't wait for you to get there ✨📖",
-        "Hey {name}, I'm sorry you're feeling down 😢 It takes SO much courage to say 'I'm not okay,' and I'm genuinely proud of you for being honest with me. Want to talk about it? I'm all ears, no time limit, no judgment 👂💛",
-        "Your feelings are valid, {name}, and it's okay to not be okay sometimes 🫂 Just remember — even the darkest nights ALWAYS end with a sunrise. Hold on a little longer. Better days are literally on their way to you right now 🌅✨",
-        "I wish SO badly I could give you a real hug right now 🤗💕 Until then, please know deep in your heart: you are valued, you are loved, you are enough, and this feeling WILL pass. You're not broken, you're just having a hard moment 💛",
-        "How long have you been feeling this way, {name}? 🥺 Sometimes talking about the timeline helps us understand what triggered it. No rush though — take your time. 💛",
-        "It's only natural to feel this way sometimes 🫂 You're human, and humans feel deeply. That's actually a beautiful thing, even when it hurts. Let's talk about it together, okay? 💛✨",
-        "Here are some ways to overcome sadness, {name} 🌈💛\n\n1. 🤗 Allow yourself to feel — Don't suppress it, acknowledge it\n2. 🌞 Get sunlight — Vitamin D boosts serotonin\n3. 🏃 Move your body — A walk, stretching, or dancing to your favorite song\n4. 👥 Connect with someone — Call a friend, even for 5 minutes\n5. 📝 Gratitude journal — Write 3 things you're thankful for daily\n6. 🎵 Music therapy — Create a 'feel good' playlist\n7. 🍎 Eat well — Nutrition affects mood more than you think\n8. 🎨 Do something creative — Drawing, writing, cooking\n9. 🙏 Help someone else — It shifts your focus outward\n10. 💤 Rest — Sometimes sadness is your body saying 'I need care'\n\nIf sadness persists for 2+ weeks, please talk to a professional. JSPM Wagholi counseling cell is there for you! 💛"
+        "Oh {name} 🥺 It's okay to feel sad — you don't have to fake being happy with me.\n\nBut I want to understand what's behind this sadness. Can you tell me:\n• When did this feeling start?\n• Did something specific happen, or did it creep in gradually?\n• Is it related to a person, a situation, or a general feeling?\n\nUnderstanding the 'why' is the first step to feeling better. I'm here to listen to everything — no rush, no judgment 💛\n\nWhile we talk, try this: go to a window, look at the sky for 30 seconds, and take 3 deep breaths. Even this tiny thing can shift your mood! 🌅",
+
+        "Hey {name}, I'm sorry you're feeling down 😢 Let's work through this together.\n\nHere are solutions based on common causes of sadness:\n\n😔 If it's about a PERSON → Write them a letter (you don't have to send it). Getting feelings out helps.\n📚 If it's about ACADEMICS → Break the problem into tiny steps. One page, one assignment, one hour at a time.\n🏠 If it's HOMESICKNESS → Call home today. Set a weekly video call routine.\n😶 If you DON'T KNOW why → That's okay too! Try these:\n1. 🌞 Get 15 min of sunlight (boosts serotonin)\n2. 🏃 Move your body for 10 minutes\n3. 📝 Write down 3 things — however small — you're grateful for\n4. 🎵 Play your favorite upbeat song\n5. 🤗 Do one kind thing for someone else\n\nWhich of these resonates? Tell me more about what's making you sad 💛",
+
+        "Your feelings are valid, {name} 🫂 But I don't want you stuck here — let's find a way forward.\n\nSadness usually has a root cause:\n• Loss (person, opportunity, expectation)\n• Disappointment (in yourself or others)\n• Feeling stuck or trapped\n• Comparing yourself to others\n• Exhaustion (physical or emotional)\n\nWhich of these feels true for you right now?\n\nHere's what I recommend regardless:\n1. 🤗 Allow yourself to feel — Don't suppress it (give yourself 15 min to fully feel it)\n2. 📝 Then journal — 'I feel sad because ___. One thing that could help is ___'\n3. 🗣️ Reach out — Call a friend, visit JSPM counseling cell, or keep talking to me\n4. 🍎 Take care of basics — Eat, hydrate, rest\n\nIf sadness persists for 2+ weeks, please talk to a professional. That's not weakness, that's wisdom! 💛",
+
+        "How long have you been feeling this way, {name}? 🥺 This is important because:\n\n• A few days → Likely situational. Let's find and address the trigger.\n• 1-2 weeks → Your mind might need extra care. Let's build a self-care routine.\n• 2+ weeks → This could be depression, and talking to a professional would really help.\n\nNo matter how long — you deserve support RIGHT NOW.\n\nHere's your feel-better toolkit:\n🌞 Sunlight + fresh air (even 10 min)\n🏃 Physical movement (walk, dance, stretch)\n🎵 Music that matches your mood (it's okay to play sad songs first, then shift to uplifting ones)\n📞 Human connection (call someone who makes you laugh)\n💤 Sleep 7-8 hours tonight\n\nWhat do you think triggered this sadness? Let's talk about it 💛✨"
       ]
     },
     "academic_stress": {
@@ -169,7 +166,6 @@
         "पढ़ाई",
         "नंबर",
         "फेल",
-        "परीक्षा",
         "अभ्यास",
         "गुण",
         "exams are approaching",
@@ -186,12 +182,13 @@
         "how to study"
       ],
       "responses": [
-        "{name}, academic pressure is SO real and I see you struggling 📚💛 But here's the tea: your grades do NOT define your worth! You are literally so much more than a number on a paper. Take it one step at a time, one page at a time 🌟",
-        "I know SPPU exams and assignments can be absolutely brutal 😩 Try breaking your work into tiny chunks — 25 min study, 5 min break (Pomodoro technique!). Your brain will thank you! And hey, even toppers have bad days 🍅⏰✨",
-        "Hey {name}, struggling with studies doesn't mean you're not smart — it means you're CHALLENGING yourself, and that takes guts! 💪 Don't be afraid to ask for help from professors or friends at JSPM. There's zero shame in that! 🌟",
-        "Listen {name}, many of the most successful people had messy academic journeys 🎯 What matters is your effort, your growth, and your kind heart. One bad grade ≠ bad future. You're doing great even when it doesn't feel like it! 💛✨",
-        "One KT or one bad result is NOT the end of the world, I pinky promise! 🤞 Take a breath, make a plan, grab some chai, and remember — you've overcome tough stuff before and you'll crush this too! I believe in you SO much 🫶☕",
-        "Here's how to overcome academic stress, {name} 📚💪\n\n1. 📋 Plan your study — Make a realistic timetable\n2. 🍅 Pomodoro Technique — 25 min study, 5 min break\n3. 📝 Active recall — Test yourself instead of re-reading\n4. 🎯 Prioritize — Focus on high-weightage topics first\n5. 👥 Study groups — Explain concepts to each other\n6. 💤 Don't sacrifice sleep — Your brain consolidates memory during sleep\n7. 🚶 Take breaks — Walk, stretch, hydrate between sessions\n8. ❌ Avoid comparison — Everyone has their own pace\n9. 📞 Ask for help — Professors, seniors, tutors at JSPM\n10. 🎵 Reward yourself — Small treats after completing tasks\n\nOne exam at a time, one chapter at a time. You'll get through SPPU exams! 💛"
+        "{name}, academic pressure is SO real 📚💛 But let's solve it, not just stress about it!\n\nFirst — what's the specific situation?\n• 📅 Exam coming up and haven't started studying?\n• 📉 Got a bad grade and feeling down?\n• 📚 Too many assignments at once?\n• 🔄 Backlogs/KTs stacking up?\n• 🧠 Can't concentrate or retain anything?\n\nEach needs a different approach! Tell me what's going on, and I'll give you a concrete study plan. Your grades don't define you, but I know they matter to you — so let's work on this together! 💪✨",
+
+        "I know SPPU exams can be brutal 😩 Here's your survival plan, {name}:\n\n📋 If exams are in 1+ weeks:\n1. List ALL subjects and topics remaining\n2. Prioritize by weightage (focus on high-marks topics first)\n3. Use Pomodoro: 25 min study, 5 min break\n4. Active recall > re-reading (test yourself!)\n5. Study groups for tough subjects\n\n🚨 If exams are in 2-3 days:\n1. Focus ONLY on important topics (past papers tell you what's important)\n2. Make one-page cheat sheets per chapter (don't use them in exam, the act of making them helps memory)\n3. Sleep 6+ hours — pulling an all-nighter actually HURTS your score\n4. Revise in morning when brain is fresh\n\nWhat specifically are you struggling with? The more details you give me, the better I can help! 📝💛",
+
+        "Hey {name}, let me ask you something important 🤔\n\nWhy are you feeling this academic pressure? Is it because:\n\nA) You haven't studied enough and feel behind?\n→ Solution: Start NOW. Even 2 hours of focused study today is better than zero. Make a priority list.\n\nB) You studied but don't feel confident?\n→ Solution: Do practice papers. Past SPPU papers are gold. Test yourself — you probably know more than you think!\n\nC) You're comparing yourself to toppers?\n→ Solution: STOP. Your only competition is yesterday's you. Everyone has different starting points.\n\nD) Parents/family pressure about marks?\n→ Solution: Have an honest conversation. Most parents care about effort, not just numbers.\n\nE) Failed a subject and feeling hopeless?\n→ Solution: One KT is NOT the end. Many successful engineers had KTs. Make a recovery plan.\n\nWhich one is it? Let's dive deeper! 💪💛",
+
+        "Listen {name}, many of the most successful people had messy academic journeys 🎯\n\nBut I know that doesn't help right now. Here are REAL solutions:\n\n📚 Study Smart, Not Just Hard:\n• Spaced repetition > cramming (review notes at 1 day, 3 days, 7 days)\n• Teach concepts to a friend (explaining = understanding)\n• Use diagrams and flowcharts (visual memory is stronger)\n• Do past papers under timed conditions\n\n🧠 Focus Hacks:\n• Phone in another room while studying\n• Study in library (environment matters!)\n• Background lo-fi music (helps some people)\n• Hydrate and snack every hour\n\n💛 Mindset:\n• Progress > Perfection\n• One bad result ≠ bad future\n• Ask professors for help — they WANT you to succeed\n• JSPM has tutoring resources — use them!\n\nWhat subject or exam is stressing you out? I might be able to suggest specific study strategies! 📝"
       ]
     },
     "motivation": {
@@ -209,7 +206,6 @@
         "प्रेरणा",
         "हार",
         "छोड़",
-        "प्रेरणा",
         "हरणे",
         "सोडणे",
         "no motivation",
@@ -223,12 +219,13 @@
         "how to focus"
       ],
       "responses": [
-        "Hey {name}, everyone loses their spark sometimes — it's SO normal! 💫 The fact that you're HERE talking about it means you haven't given up. And THAT takes real strength, more than you know! 💪✨",
-        "You don't have to climb the whole mountain today, {name} 🏔️ Just take one teeny tiny step. Progress is progress, even if it's crawling! I believe in you with my whole heart 🫶💛",
-        "Remember WHY you started, {name} ✨ That fire is still inside you, even if it feels like a tiny ember right now. Let's fan those flames together! What's ONE small thing you could do today? Even just making your bed counts! 🔥💕",
-        "It's okay to rest, {name} — rest is productive! But don't you DARE quit on yourself 😤💛 You've come SO far already! Your future self is going to look back and be so grateful you kept going. You're amazing! 🌈",
-        "Motivation comes and goes like WiFi signal 📶😂 What stays is discipline and self-love. Be kind to yourself today, have some comfort food, and tomorrow will feel a little brighter. I'm rooting for you ALWAYS! 🌻💛",
-        "Here's how to overcome lack of motivation, {name} 🔥\n\n1. 🎯 Set tiny goals — So small you can't say no (read 1 page, not 1 chapter)\n2. ⏰ 2-Minute Rule — If it takes less than 2 mins, do it NOW\n3. 📝 Write your WHY — Why did you start this journey?\n4. 🏆 Celebrate small wins — Finished a task? Treat yourself!\n5. 👥 Find an accountability partner — A friend who keeps you on track\n6. 📱 Remove distractions — Put your phone in another room\n7. 🌅 Start your day with 1 productive thing — It builds momentum\n8. 💪 Exercise — Physical energy fuels mental motivation\n9. 📚 Consume inspiring content — TED talks, success stories\n10. 🛌 Rest without guilt — Burnout kills motivation\n\nMotivation is a muscle, {name}. The more you use it, the stronger it gets! 💛✨"
+        "Hey {name}, losing motivation is SO normal — but let's figure out WHY and fix it! 💫\n\nLack of motivation usually comes from:\n• 😴 Burnout — You pushed too hard for too long\n• 😶 No clear goal — You don't know what you're working toward\n• 😰 Fear of failure — 'Why try if I might fail?'\n• 📱 Distraction overload — Phone, social media, Netflix\n• 🔁 Routine fatigue — Same boring cycle every day\n\nWhich one sounds like you? Be honest — the answer tells us the solution!\n\nQuick fix for RIGHT NOW:\n🎯 Pick the SMALLEST possible task and do JUST that. Not the whole assignment — just open the file. Not the whole workout — just put on your shoes. Action creates motivation, not the other way around! 💪💛",
+
+        "You don't have to climb the whole mountain today, {name} 🏔️\n\nHere's your anti-procrastination toolkit:\n1. ⏰ 2-Minute Rule — If it takes less than 2 min, do it NOW\n2. 🎯 Tiny goals — 'Read 1 page' not 'finish the chapter'\n3. 📱 App blockers — Use Forest app to stay off your phone\n4. 🏆 Reward system — Finished 1 hour? Watch 1 episode\n5. 👥 Accountability partner — Tell a friend your goal for today\n6. 🌅 Win the morning — Do ONE productive thing before 10 AM\n7. 📝 Track streaks — Mark an X on a calendar for each productive day\n\nBut {name}, I'm curious — what are you trying to get motivated FOR? Studies, fitness, a project, or life in general? And what do you think is blocking you? Let's get specific! 💛✨",
+
+        "I hear you, {name} 💛 Before I give you solutions, I want to understand the cause.\n\nAre you feeling unmotivated because:\nA) You're exhausted and need REST (not motivation)?\nB) The goal feels too big and overwhelming?\nC) You don't see the point of what you're doing?\nD) You're scared of failing so you'd rather not try?\nE) You're comparing yourself to others who seem ahead?\n\nEach of these needs a completely different approach:\n• A → Rest guilt-free. Recharge. Motivation will return.\n• B → Break it into steps so tiny they feel ridiculous.\n• C → Reconnect with your WHY. Why did you choose this path?\n• D → Redefine success. Trying IS success. Failing means you learned.\n• E → Unfollow. Delete. Compare only to yesterday's you.\n\nWhich resonates? Let's dig in! 🔥",
+
+        "Motivation is not a personality trait, it's a SKILL — and I'm going to teach it to you, {name} 💪\n\nThe Motivation Formula:\n📌 Clarity (know exactly what to do) +\n📌 Capability (believe you CAN do it) +\n📌 Energy (physical and mental fuel) =\n💥 Motivation!\n\nIf you're missing ANY of these, motivation dies. So which one is low for you?\n\n🔧 Fixing low clarity: Write down your top 3 priorities for this week\n🔧 Fixing low confidence: Start with something you're GOOD at, build momentum\n🔧 Fixing low energy: Sleep, eat well, exercise, cut caffeine\n\nAlso — what's the ONE thing you keep putting off? Let's tackle that first. Sometimes doing the thing you're avoiding the most gives you the biggest energy boost! 🌟💛"
       ]
     },
     "relationship": {
@@ -245,15 +242,17 @@
         "ब्रेकअप",
         "प्यार",
         "रिश्ता",
-        "ब्रेकअप",
         "प्रेम",
         "नाते"
       ],
       "responses": [
-        "Oh {name}, heartache is one of the worst kinds of pain 💔 But I need you to hear this: you are complete, whole, and worthy of love ALL by yourself. This pain is temporary, but your amazing self? That's forever ✨💛",
-        "{name}, I'm so sorry you're going through this 🥺 Breakups and rejection feel like the world is ending, but I promise it's actually the world making room for something better. Cry it out, eat ice cream, I'm here 🍦💕",
-        "Your heart might be hurting right now, but it's also healing — even if you can't feel it yet 🌱 Give yourself time, {name}. There's no rush to 'get over it.' Feel your feelings at YOUR pace 💛🫶",
-        "Hey, whoever made you feel this way is missing out on the most amazing human 😤✨ Their loss, truly! You deserve someone who makes you feel like the star you are. Until then, you've got me as your #1 fan! 🌟💕"
+        "Oh {name}, heartache is one of the worst kinds of pain 💔 But let's work through this.\n\nCan you tell me what happened? Is this about:\n• 💔 A breakup?\n• 😞 Unrequited feelings / rejection?\n• 😤 A fight with your partner?\n• 🤔 Confusion about a relationship?\n• 👨‍👩‍👧 Family relationship issues?\n\nEach situation needs different advice. I'm here to listen AND help! 💛",
+
+        "{name}, I'm so sorry you're going through this 🥺\n\nHere's what I want you to know + do:\n\n💔 If it's a BREAKUP:\n1. Allow yourself to grieve — set a time limit (1 week to fully feel it)\n2. Remove/mute them on social media (you don't need daily reminders)\n3. Don't text them when you're emotional — write it in notes app instead\n4. Lean on friends — you don't have to process this alone\n5. Channel the energy — gym, studies, a new hobby\n\n😞 If it's REJECTION:\n• Their 'no' is not a verdict on your worth\n• You're not for everyone, and that's OKAY\n• The right person won't make you question your value\n\nWhat specifically are you going through? I can give more targeted advice! 💛🫶",
+
+        "Your heart might be hurting right now, but it's also healing — even if you can't feel it yet 🌱\n\nLet me ask: what's the hardest part for you right now?\n• Missing them?\n• Feeling not good enough?\n• Being alone after being with someone?\n• Regret about something you said/did?\n\nEach of these has a different path forward. And here's one universal truth: you are complete, whole, and worthy of love ALL by yourself. This pain is temporary, but your amazing self? That's forever ✨💛",
+
+        "Hey, whoever made you feel this way is missing out on an amazing human 😤✨\n\nHere's your heartbreak recovery plan:\n📅 Week 1: Feel everything. Cry, vent, eat ice cream. No shame.\n📅 Week 2: Start a new routine. Gym, library, new hobby.\n📅 Week 3: Reconnect with friends you may have neglected.\n📅 Week 4: Set a new goal for yourself — something exciting!\n\nAnd through all of this: NO checking their social media. Trust me.\n\nWhat triggered these feelings today? Was it something specific or just the weight of it all? Let's talk 💛"
       ]
     },
     "sleep": {
@@ -278,12 +277,11 @@
         "fix sleep schedule"
       ],
       "responses": [
-        "Oh {name}, not being able to sleep is the WORST 😴 Try this: put your phone on night mode, take slow deep breaths, and imagine you're floating on a cloud. Your body wants to rest — let it 🌙💛",
-        "Hey {name}, your brain seems to have too many tabs open! 😅 Try writing down everything on your mind before bed — like a brain dump. It really helps quiet those racing thoughts. Sweet dreams are coming! 🌟✨",
-        "Rest is SO important, {name}! If you can't sleep, don't stress about not sleeping (that makes it worse 😂). Try some calming music or a body scan meditation. Your body will find its way to dreamland 🌈💤",
-        "Not being able to sleep is SO draining 😴 What do you think is keeping you up at night, {name}? Sometimes our brain just won't shut off, and that's really frustrating. Let's figure this out together! 💛",
-        "Oh no, sleep issues are the worst 🥺 Have you tried putting your phone away 30 minutes before bed? Also, a warm glass of milk or chamomile tea works wonders! Your body needs rest, and you DESERVE it! 🌙💛",
-        "Here's how to overcome sleep problems, {name} 🌙💤\n\n1. 📱 No screens 30 min before bed — Blue light suppresses melatonin\n2. ⏰ Fixed sleep schedule — Same bedtime and wake time daily\n3. 🌡️ Cool dark room — 18-20°C is ideal for sleep\n4. ☕ No caffeine after 2 PM\n5. 🧘 Relaxation routine — Deep breathing or body scan meditation\n6. 📝 Brain dump — Write down worries before bed\n7. 🚫 No naps after 3 PM — It interferes with night sleep\n8. 🏃 Exercise daily — But not within 3 hours of bedtime\n9. 🥛 Warm milk or chamomile tea before bed\n10. 📖 Read a physical book (not phone) in bed\n\nIf insomnia persists for 2+ weeks, please consult a doctor. Good sleep is not a luxury, it's a necessity! 💛"
+        "Oh {name}, not being able to sleep is the WORST 😴\n\nLet me ask — what's keeping you up? Is it:\n• 🧠 Racing thoughts / overthinking?\n• 📱 Too much screen time before bed?\n• ☕ Caffeine or energy drinks late in the day?\n• 😰 Anxiety or stress about something specific?\n• 🔄 Messed up sleep schedule (sleeping too late, waking too late)?\n\nThe solution depends on the cause! Tell me what's going on.\n\nFor RIGHT NOW, try this:\n1. Put your phone face-down\n2. Take 10 slow breaths (in 4 sec, out 8 sec)\n3. Tense and release each muscle group from toes to head\n\nYour body WANTS to rest — let's help it 🌙💛",
+
+        "Hey {name}, your brain seems to have too many tabs open! 😅\n\nHere's your complete sleep fix plan:\n\n🌙 Tonight:\n1. 📝 Brain dump — Write everything on your mind on paper (gets it out of your head)\n2. 📱 Phone away 30 min before bed\n3. 🌡️ Cool, dark room (18-20°C ideal)\n4. 🫁 4-7-8 breathing: In 4 sec, hold 7, out 8. Repeat 4 times.\n\n📅 This week:\n5. ⏰ Same bedtime + wake time every day (even weekends)\n6. ☕ No caffeine after 2 PM\n7. 🚫 No naps after 3 PM\n8. 🏃 Exercise daily (but NOT within 3 hours of bedtime)\n9. 🥛 Warm milk or chamomile tea before bed\n10. 📖 Read a physical book instead of scrolling\n\nHow long has this sleep problem been going on? If it's 2+ weeks, please see a doctor — sleep is not optional! 💛",
+
+        "Not being able to sleep is SO draining 😴 Let me help you fix this, {name}.\n\nThe #1 reason students can't sleep: PHONE IN BED 📱\n\nI know it's harsh, but your phone's blue light literally tells your brain 'stay awake!' Try charging it across the room tonight.\n\nOther common causes:\n• Irregular schedule → Fix with a consistent bedtime alarm\n• Caffeine → Switch to water after lunch\n• Stress → Do a 5-min meditation before bed\n• Racing mind → Keep a worry journal by your bed\n\nWhat time do you usually try to sleep and wake up? And what do you do in the hour before bed? Let me analyze your routine and suggest specific fixes! 🌙💛"
       ]
     },
     "greeting": {
@@ -307,10 +305,13 @@
         "hey there"
       ],
       "responses": [
-        "HIII {name}!! 🥰💛 I'm MindMate AI, your friendly bestie! This is YOUR safe space — no judgment, just good vibes and support. How are you REALLY feeling today? Tell me everything! 👋✨",
-        "Helloo {name}! 🌸 Welcome to your cozy corner of the internet! I'm MindMate, and I'm here to listen, support, and be your virtual bestie. What's on your mind today? 🤗💕",
-        "Heyyyy! So glad you're here! 🎉 Remember, there's literally no wrong thing to say to me. How are you feeling today? And I mean REALLY feeling, not the 'I'm fine' version 😉💛",
-        "Namaste, {name}! 🙏✨ I'm MindMate AI, and I exist just for YOU. Whether you want to vent, cry, laugh, or just talk about your day — I'm here for ALL of it! What's up? 🫶"
+        "HIII {name}!! 🥰💛 I'm MindMate AI, your friendly mental health companion!\n\nThis is YOUR safe space — no judgment, just support and real solutions.\n\nI can help you with:\n🧠 Stress & anxiety management\n💙 Feeling sad or down\n📚 Academic pressure\n😴 Sleep problems\n💪 Motivation & focus\n👥 Loneliness & relationships\n🆘 Crisis support\n\nHow are you REALLY feeling today? Not the 'I'm fine' version — the real one! 😉✨",
+
+        "Helloo {name}! 🌸 Welcome to your cozy corner of the internet!\n\nI'm MindMate AI — I listen, I ask the right questions, and I give you real solutions. Not just 'it'll be okay' — actual steps you can take!\n\nWhat's on your mind today? Whether it's a tiny worry or a heavy burden, I'm here for ALL of it 🤗💕",
+
+        "Heyyyy {name}! So glad you're here! 🎉\n\nJust so you know, I'm designed to:\n✅ Listen without judging\n✅ Ask questions to understand your situation\n✅ Give you practical solutions and coping strategies\n✅ Help you identify what's really bothering you\n\nSo tell me — what brings you here today? 💛",
+
+        "Namaste, {name}! 🙏✨ I'm MindMate AI, and I'm here just for YOU.\n\nWhether you want to vent about your day, work through a problem, or just need someone to listen — I'm ready!\n\nAnd I don't just listen — I'll help you figure out WHY you feel the way you do and WHAT you can do about it. So what's up? 🫶💛"
       ]
     },
     "gratitude": {
@@ -325,7 +326,6 @@
         "धन्यवाद",
         "शुक्रिया",
         "आभार",
-        "धन्यवाद",
         "feel great",
         "i feel happy",
         "i am happy",
@@ -335,19 +335,24 @@
         "thanks for the help"
       ],
       "responses": [
-        "Awwww, YOU'RE welcome, {name}! 🥹💛 It makes my whole day knowing I could help even a little bit! Remember, I'm ALWAYS here — 3 AM, 3 PM, whenever you need me! 🫶✨",
-        "No, thank YOU for trusting me with your feelings 🥺💕 That takes SO much courage! I'm always just one message away. Take care of that beautiful heart of yours! 🌟",
-        "Aaah you're making me blush! 😊💛 I'm so happy I could help! You deserve ALL the support in the world. Come back anytime — my virtual door is always open for you! 🌸💕",
-        "{name}, YOU'RE the amazing one for reaching out! That's a sign of strength, not weakness 💪✨ Keep being the incredible human you are! I'm your biggest cheerleader! 📣💛"
+        "Awwww, YOU'RE welcome, {name}! 🥹💛 It makes my whole day knowing I could help!\n\nHere's a quick challenge to keep the good vibes going: tonight, write down 3 things you're grateful for — no matter how small. It literally rewires your brain for happiness over time! 🧠✨\n\nI'm ALWAYS here — 3 AM, 3 PM, whenever you need me! 🫶",
+
+        "No, thank YOU for trusting me with your feelings 🥺💕 That takes real courage!\n\nNow that you're feeling better, here's how to MAINTAIN this feeling:\n1. 📝 Journal what helped you today\n2. 🗣️ Share what you learned with a friend who might need it\n3. 🔁 Make self-care a daily habit, not just a crisis response\n\nCome back anytime — my door is always open! 🌟",
+
+        "I'm so happy I could help, {name}! 😊💛\n\nRemember: the strategies we talked about work best when practiced REGULARLY, not just in tough moments. Try to make them part of your routine!\n\nAnd if you ever feel things getting heavy again — come straight here. No waiting until it gets bad. Prevention > cure! 🌸💕",
+
+        "{name}, YOU'RE the amazing one for reaching out! That's a sign of strength, not weakness 💪✨\n\nKeep taking care of that beautiful mind of yours. And remember — I'm always here if you need a check-in, a pep talk, or just someone to listen! 📣💛"
       ]
     },
     "default": {
       "responses": [
-        "I'm here for you, {name}! 💛 I might not have the perfect words, but I want you to know that your feelings are SO valid and you matter more than you know. Tell me more about what's going on? 🤗",
-        "I hear you, {name}, and I genuinely care 💕 Even if I don't fully understand what you're going through, I'm here to listen. You don't have to face anything alone! 🫶",
-        "That sounds really tough, and I appreciate you sharing with me 🌸 Remember, it's okay to not have everything figured out. Nobody does! We can talk through it together 💛✨",
-        "I want to be the BEST support for you, {name}! 🥰 Could you tell me a bit more about how you're feeling? No rush, no pressure — I'm here with nothing but care and good vibes! 💙🌈",
-        "Whatever you're going through, I want you to know: you're not alone, you're not weird, and you're not broken 💛 You're a {name} having a human experience. And I'm right here with you! 🫂✨"
+        "I'm here for you, {name}! 💛 I want to help, but I need to understand what you're going through better.\n\nCould you tell me:\n• What are you feeling right now? (sad, anxious, stressed, confused, angry?)\n• What do you think caused this feeling?\n• How long have you been feeling this way?\n\nThe more you share, the better I can help with real, practical solutions! 🤗",
+
+        "I hear you, {name}, and I genuinely care 💕 Help me understand your situation better so I can give you the RIGHT advice.\n\nAre you dealing with:\n🧠 Stress or anxiety?\n💙 Sadness or loneliness?\n📚 Academic pressure?\n💔 Relationship issues?\n😴 Sleep problems?\n💪 Lack of motivation?\n\nPick the closest one, or tell me in your own words! I don't just listen — I help find solutions 🫶",
+
+        "That sounds really tough, {name} 🌸 I want to give you the best possible support.\n\nCan you help me understand:\n1. What's the main thing bothering you?\n2. When did it start?\n3. What have you tried so far?\n\nOnce I understand the cause, I can suggest specific, practical steps to help! 💛✨",
+
+        "I want to be the BEST support for you, {name}! 🥰\n\nTell me a bit more about:\n• What happened (or what's been happening)?\n• How it's making you feel?\n• What would 'better' look like for you?\n\nWith these answers, I can give you a real action plan — not just kind words (though you'll get those too!) 💙🌈"
       ]
     },
     "grief": {
@@ -366,10 +371,11 @@
         "निधन"
       ],
       "responses": [
-        "Oh {name}, I am so incredibly sorry for your loss 😢💛 Grief is one of the most painful things a human can go through, and there are no right words for this moment. Just know that I'm here, and it's okay to feel everything you're feeling. You don't have to be strong right now. 🫂",
-        "I'm really, truly sorry 💔 Losing someone you love changes everything. Please be gentle with yourself right now — grief doesn't have a timeline, and however you're processing this is valid. I'm here whenever you need to talk, day or night. 🕊️💛",
-        "My heart goes out to you, {name} 🥺 I can't imagine how much pain you're in right now. Just know you're not alone in this — I'm here to listen, to sit with you in silence, or to talk. Whatever you need. Your loved one's memory lives on in you. 💛🌟",
-        "I'm so sorry for your loss 😢 You don't have to go through this alone. Take all the time you need to grieve — there's no right or wrong way to do it. And please remember to take care of yourself too, okay? Eat, drink water, rest when you can. 🫶💕"
+        "Oh {name}, I am so incredibly sorry for your loss 😢💛\n\nGrief is one of the most painful human experiences, and there's no 'right' way to do it. But I want you to know some things:\n\n1. It's okay to cry — tears are healing, not weakness\n2. It's okay to feel angry, confused, or numb — all of it is valid\n3. There's no timeline — don't let anyone rush you\n\nCan I ask — who did you lose, and when? You don't have to answer if it's too raw, but talking about them can sometimes help keep their memory alive 💛\n\nAnd please take care of basics: eat something today, drink water, try to rest. Your body needs fuel to process this pain 🫂",
+
+        "I'm really, truly sorry 💔 I can't take this pain away, but I can help you navigate it.\n\nGrief comes in waves — some days will be okay, and some will knock you down. Both are normal.\n\nThings that help during grief:\n1. 🗣️ Talk about them — Share memories with someone who knew them\n2. 📝 Write to them — A letter can be incredibly healing\n3. 🕯️ Create a ritual — Light a candle, visit a place they loved\n4. 👥 Lean on your support system — Don't isolate yourself\n5. 🏥 Grief counseling — JSPM Wagholi has a counseling cell\n6. ⏰ Give yourself time — Grief doesn't have an expiry date\n\nIs there anything specific you'd like to talk about? A memory, a feeling, a question? I'm here 💛🕊️",
+
+        "My heart goes out to you, {name} 🥺 Losing someone changes everything.\n\nI want you to know that grief is not linear — you might feel okay one moment and broken the next. That's completely normal. It's not 'moving on' — it's 'moving forward WITH their memory.'\n\nRight now, please:\n• 🍲 Have you eaten today? Please eat something.\n• 💧 Drink water.\n• 💤 Try to rest, even if you can't sleep.\n• 📞 Call someone who cares about you.\n\nAnd if you want to tell me about the person you lost — their name, a favorite memory, what they meant to you — I'm here to listen. Sometimes sharing their story is the most beautiful way to honor them 💛🌟"
       ]
     },
     "crisis": {
@@ -384,8 +390,9 @@
         "जगायचे नाही"
       ],
       "responses": [
-        "I hear you, and I'm really glad you told me this 💛 What you're feeling right now is so painful, but I need you to know — your life matters. Please, please reach out to a professional who can truly help right now:\n\n📞 iCall: 9152987821\n📞 Vandrevala Foundation: 1860-2662-345\n📞 AASRA: 9820466726\n📞 JSPM Wagholi Counseling Cell\n\nYou are not alone. People care about you, including me. 🫂💛",
-        "{name}, thank you for trusting me with something this heavy 🥺 I care about you so much, and I want you to be safe. Please talk to someone who can really help:\n\n📞 iCall: 9152987821\n📞 Vandrevala Foundation: 1860-2662-345\n📞 AASRA: 9820466726\n\nYou have so much ahead of you, even if it doesn't feel that way right now. Please reach out. 💛🫶"
+        "I hear you, and I'm really glad you told me this 💛 What you're feeling right now is so painful, and it's REAL — I'm not dismissing it.\n\nBut {name}, I need you to do something right now:\n\n🚨 Please reach out to a professional IMMEDIATELY:\n📞 iCall: 9152987821\n📞 Vandrevala Foundation: 1860-2662-345 (24/7)\n📞 AASRA: 9820466726\n📞 JSPM Wagholi Counseling Cell\n\nWhile you're here, can you tell me what's brought you to this point? What happened? Sometimes the pain feels permanent, but it's not — and the right help can change everything.\n\nYou reached out to me, and that tells me a part of you wants things to get better. Hold onto that part. You are not alone. 🫂💛",
+
+        "{name}, thank you for trusting me with something this heavy 🥺 That takes incredible courage.\n\nI care about you, and I want you to be safe. Please talk to someone who can really help RIGHT NOW:\n\n📞 iCall: 9152987821\n📞 Vandrevala Foundation: 1860-2662-345 (24/7)\n📞 AASRA: 9820466726\n📞 JSPM Wagholi Counseling Cell\n\nWhile we talk — can you tell me what's going on? What's causing this pain? You don't have to carry this alone.\n\nI also want you to know: this feeling is TEMPORARY, even though it doesn't feel that way. Many people who felt exactly like you are now living lives they love. Getting help was their turning point. Let it be yours too. 💛🫶"
       ]
     },
     "reluctant": {
@@ -399,9 +406,11 @@
         "बोलायचे नाही"
       ],
       "responses": [
-        "That's completely okay, {name} 💛 You don't have to talk if you're not ready. I'll be right here whenever you feel like opening up — no pressure, no timeline. Just know this is YOUR safe space, always. 🤗",
-        "I understand, and I respect that 🫶 Sometimes we just need to sit with our feelings for a while. Whenever you're ready, I'll be here. Even if it's just to say hi. You matter to me. 💛✨",
-        "No pressure at all, {name} 💕 Not being ready to talk is totally valid. I'll be here — today, tomorrow, whenever. You're in charge here, okay? 🌸"
+        "That's completely okay, {name} 💛 You don't have to talk if you're not ready.\n\nBut can I suggest one thing? Even if you don't want to talk to me, try writing down what you're feeling on paper. Just for yourself. Getting thoughts out of your head — even silently — can make them less heavy.\n\nI'll be right here whenever you feel like opening up. No pressure, no timeline. 🤗",
+
+        "I understand, and I respect that 🫶 Sometimes we just need to sit with our feelings for a while.\n\nHere's something you can do on your own when you're ready:\n1. 📝 Write down 'I feel ___ because ___'\n2. 🫁 Take 10 slow breaths\n3. 🚶 Go for a short walk\n\nThese don't require talking to anyone. And whenever you're ready, I'm here — today, tomorrow, whenever. You matter to me. 💛✨",
+
+        "No pressure at all, {name} 💕 Not being ready to talk is totally valid.\n\nSometimes people don't want to talk because:\n• They feel it won't help\n• They're afraid of being judged\n• They're too exhausted\n• They don't have the words yet\n\nAll of those are okay. But when you ARE ready — even if it's just one sentence — I'm here. And I promise: no judgment, just support and solutions. 🌸"
       ]
     },
     "frustration": {
@@ -415,9 +424,11 @@
         "फायदा नाही"
       ],
       "responses": [
-        "I hear you, and I'm sorry if I'm not being as helpful as you need right now 🥺 I know I'm not perfect — I'm an AI doing my best. But your feelings are real and they matter. If you'd prefer to talk to a real person, JSPM Wagholi has a counseling cell that can help. 💛",
-        "You're right that I'm limited in what I can do 💙 But I genuinely want to support you the best I can. If I'm not enough, please don't hesitate to reach out to the JSPM counseling cell or call iCall (9152987821). You deserve real help. 🫶",
-        "I'm sorry I'm falling short, {name} 😔 I never want to make you feel worse. Would you like to try telling me what you need in a different way? Or I can share some resources that might actually help? 💛"
+        "I hear you, and I'm sorry if I'm not being as helpful as you need 🥺\n\nYou're right that I have limitations — I'm an AI. But let me try harder. Can you tell me specifically:\n• What are you going through?\n• What kind of help would actually be useful to you?\n\nIf I can't help, here are people who definitely CAN:\n📞 JSPM Wagholi Counseling Cell\n📞 iCall: 9152987821\n📞 Vandrevala Foundation: 1860-2662-345\n\nYour frustration is valid. You deserve real help. 💛",
+
+        "You're right that I'm limited in what I can do 💙 But your frustration tells me you're dealing with something really tough, and you deserve proper support.\n\nCan you help me understand what you actually need? Is it:\n• Someone to listen without giving advice?\n• Practical solutions to a specific problem?\n• Professional help (counselor, therapist)?\n• Just to vent and feel heard?\n\nI'll adjust my approach based on what YOU need. And if I'm truly not enough, please reach out to JSPM's counseling cell — they're trained for this. 🫶",
+
+        "I'm sorry I'm falling short, {name} 😔 But your feelings — the frustration, the pain behind it — those are real and they matter.\n\nLet me try a different approach. Instead of me talking, I want to listen. Tell me:\n1. What's the REAL problem you're facing?\n2. What have you tried that didn't work?\n3. What would 'help' look like to you?\n\nI'll do my best to match what you actually need. And if you'd prefer a human, that's completely okay too — iCall (9152987821) is available. 💛"
       ]
     },
     "self_doubt": {
@@ -433,10 +444,13 @@
         "मी निरुपयोगी"
       ],
       "responses": [
-        "Oh {name}, please don't say that about yourself 🥺💛 I know those thoughts feel SO real right now, but they're lying to you. You are worthy, you are enough, and you are loved — exactly as you are. Your brain is being mean to you, and you don't deserve that. 🫶✨",
-        "Hey, STOP right there 😤💕 I will NOT let you talk about {name} like that! You are NOT worthless, you are NOT stupid, and you are NOT a failure. You're a {name} going through a tough time. Big difference! 🌟💛",
-        "{name}, those thoughts? They're not facts — they're just your pain talking 🥺 You are so much more than what your inner critic tells you. Would you like to try something? Name one tiny thing you did today — even getting out of bed counts. Because that took strength. 💪💛",
-        "I wish you could see yourself the way I see you, {name} 🥹 Someone brave enough to open up, someone who cares deeply, someone who deserves love and kindness — especially from themselves. You ARE enough. 🌈💕"
+        "Oh {name}, please don't say that about yourself 🥺💛 Those thoughts feel real, but they're your inner critic lying to you.\n\nLet me ask you something: where did this belief come from?\n• Did someone say something hurtful to you?\n• Are you comparing yourself to others on social media?\n• Did you fail at something recently?\n• Have you been isolated and stuck in your own head?\n\nThe source matters because that's what we need to address!\n\nHere's a fact: you reached out right now. That takes courage. Someone who is 'worthless' wouldn't have the strength to do that. You just proved your inner critic wrong. 🫶✨",
+
+        "Hey, STOP right there 😤💕 Let me challenge those thoughts with FACTS:\n\n❌ 'I'm worthless' → ✅ You're HERE, trying. That's valuable.\n❌ 'Nobody likes me' → ✅ Have you asked everyone? Probably not. Your brain is overgeneralizing.\n❌ 'I can't do anything' → ✅ Name ONE thing you did today. Even waking up counts.\n❌ 'I'm a failure' → ✅ Failure is an event, not an identity.\n\nThis technique is called 'cognitive restructuring' — challenging negative thoughts with evidence. Try it:\n\n📝 Write the negative thought\n🔍 Ask: 'Is this a FACT or a FEELING?'\n✅ Write a balanced alternative\n\nWhat specific thought is hurting you most right now? Let's challenge it together! 💛💪",
+
+        "{name}, those thoughts? They're not facts — they're just your pain talking 🥺\n\nHere's what I want you to do right now:\n\n1. 📝 Write down 3 things you've accomplished — EVER. Graduating? Making a friend? Learning to cook? Anything.\n2. 📝 Write down 3 things you like about yourself — your humor? Your kindness? Your taste in music?\n3. 📝 Write down 3 people who would be sad if you weren't in their life.\n\nI bet you'll struggle to stop at 3 for each. You have MORE value than your inner critic allows you to see.\n\nWhy do you feel this way? What happened that triggered these thoughts? Let's find the root cause. 💛",
+
+        "I wish you could see yourself the way others see you, {name} 🥹\n\nSelf-doubt is often caused by:\n• Comparing your chapter 1 to someone's chapter 20\n• Past criticism that you internalized as truth\n• Setting impossible standards for yourself\n• Focusing on failures while ignoring successes\n\nWhich of these resonates? Understanding WHY you feel this way is the first step to changing it.\n\nAnd here's your daily homework:\n🌅 Every morning, say ONE kind thing to yourself in the mirror\n🌙 Every night, write ONE thing you did well today\n\nIt feels silly at first, but after 2 weeks, it literally changes your brain chemistry. Will you try it? 🌈💕"
       ]
     },
     "goodbye": {
@@ -451,10 +465,13 @@
         "निघतो"
       ],
       "responses": [
-        "Bye bye, {name}! 👋💛 Remember, I'm always here whenever you need me — 3 AM, 3 PM, anytime! Take care of that beautiful heart. You're amazing! ✨🫶",
-        "See you later, {name}! 🌸 I hope our chat helped even a little bit. Remember to be kind to yourself today, okay? You deserve it! 💕",
-        "Goodbye for now! 🌟 But never for forever — I'll be right here whenever you need me. Go out there and be the incredible person you are! 💛✨",
-        "Take care, {name}! 🤗 Don't forget: you're stronger than you think, braver than you feel, and loved more than you know. See you soon! 💕🌈"
+        "Bye bye, {name}! 👋💛 Before you go — remember the solutions we talked about. Pick ONE thing to try today!\n\nAnd I'm always here whenever you need me — 3 AM, 3 PM, anytime. Take care of that beautiful mind! ✨🫶",
+
+        "See you later, {name}! 🌸 I hope our chat helped!\n\nQuick reminder:\n✅ Practice what we discussed\n✅ Be kind to yourself today\n✅ Come back if you need a check-in\n\nYou're stronger than you think! 💕",
+
+        "Goodbye for now! 🌟 But never forever — I'll be right here whenever you need me.\n\nYour takeaway for today: identify one thing that's bothering you, and take ONE small step to address it. Progress over perfection!\n\nGo out there and be the incredible person you are! 💛✨",
+
+        "Take care, {name}! 🤗 Remember:\n• You're not alone in whatever you're facing\n• Small steps > no steps\n• Asking for help is strength, not weakness\n• I'm always one message away\n\nSee you soon! 💕🌈"
       ]
     },
     "coping": {
@@ -469,7 +486,6 @@
         "yoga",
         "ध्यान",
         "शांत",
-        "ध्यान",
         "शांतता",
         "overcome",
         "how to overcome",
@@ -492,13 +508,14 @@
         "कैसे सामना करें",
         "उपाय",
         "कसे सामोरे जावे",
-        "उपाय",
         "मार्ग"
       ],
       "responses": [
-        "Great question, {name}! 🧘‍♀️ Here are some coping techniques that really help:\n\n1. 🫁 Deep Breathing (4-7-8): Breathe in 4 sec, hold 7, out 8\n2. 🧊 Ice Cube Technique: Hold ice — it grounds you instantly\n3. 📝 Journaling: Write down 3 things you're grateful for\n4. 🚶 5-minute walk outside\n5. 🎵 Listen to your comfort playlist\n\nWhich one would you like to try? 💛",
-        "Meditation is AMAZING for mental health! 🌟 Here's a simple one:\n\n1. Sit comfortably and close your eyes\n2. Focus on your breathing — in through nose, out through mouth\n3. When thoughts come (they will!), just notice them and let them pass like clouds ☁️\n4. Start with just 2 minutes\n\nThere are also great apps like Headspace and Calm. You've got this, {name}! 🧘‍♂️💛",
-        "Here's something that helps SO many people 🌈\n\nThe 5-4-3-2-1 Grounding Technique:\n• 5 things you can SEE 👀\n• 4 things you can TOUCH ✋\n• 3 things you can HEAR 👂\n• 2 things you can SMELL 👃\n• 1 thing you can TASTE 👅\n\nIt pulls you right back to the present moment. Try it right now! 💛✨"
+        "Great question, {name}! 🧘‍♀️ Here are evidence-based coping techniques:\n\n🔥 For IMMEDIATE relief (use during a crisis moment):\n1. 🫁 4-7-8 Breathing: In 4 sec, hold 7, out 8\n2. 🧊 Ice Cube Technique: Hold ice — it grounds you instantly\n3. 🖐️ 5-4-3-2-1 Grounding: 5 see, 4 touch, 3 hear, 2 smell, 1 taste\n\n📅 For DAILY mental health (build these habits):\n4. 📝 Gratitude journal — 3 things each night\n5. 🚶 30-min walk outside daily\n6. 🧘 5-min meditation (Headspace app is free for students)\n7. 💤 Consistent sleep schedule\n8. 📱 Screen time limit (especially social media)\n\nBut {name}, what specifically are you trying to cope with? I can give you targeted strategies! 💛",
+
+        "I love that you're looking for solutions, {name}! 💪 That's already a huge step.\n\nBefore I recommend techniques, tell me:\n• What are you trying to cope WITH? (stress, anxiety, sadness, anger?)\n• When does it feel worst? (morning, night, specific situations?)\n• What have you tried before? (so I don't repeat what didn't work)\n\nThis way I can give you a PERSONALIZED coping plan, not just generic advice! 💛✨",
+
+        "Here's a complete mental wellness toolkit, {name} 🌈\n\n🌅 MORNING routine (10 min):\n• 2 min stretching\n• 3 min deep breathing\n• 5 min journaling ('Today I will ___')\n\n🌞 DURING THE DAY:\n• Take breaks every 90 min\n• Walk for 10 min after lunch\n• Drink 8 glasses of water\n• Practice 'thought checking' — Is this thought helpful?\n\n🌙 EVENING routine (15 min):\n• No screens 30 min before bed\n• Write 3 things you're grateful for\n• Body scan meditation\n• Read something calming\n\nYou don't have to do ALL of this — start with ONE thing from each section. Which one appeals to you most? 💛"
       ]
     },
     "mental_health_info": {
@@ -522,11 +539,13 @@
         "signs of anxiety"
       ],
       "responses": [
-        "Great question! 🌟 Mental health includes our emotional, psychological, and social well-being. It affects how we think, feel, and act, and helps determine how we handle stress, relate to others, and make choices. It's important at EVERY stage of life! 💛\n\nFun fact: 1 in 5 young people will experience a mental health condition. So if you're going through something — you're NOT alone! 🤗",
-        "Mental health is just as important as physical health, {name}! 💛 Here are some key facts:\n\n• It's okay to NOT be okay sometimes\n• Seeking help is a sign of STRENGTH, not weakness\n• Mental health conditions are treatable\n• Self-care isn't selfish — it's necessary\n\nJSPM Wagholi has a counseling cell if you ever need professional support! 🏫💕",
-        "Depression is a real medical condition — not just 'feeling sad' 💙 It involves persistent feelings of sadness, hopelessness, or loss of interest lasting 2+ weeks. It's NOT a character flaw or weakness.\n\nIf you think you might be experiencing depression, please talk to a professional. JSPM Wagholi's counseling cell and iCall (9152987821) are great resources. You deserve help! 💛🫶"
+        "Great question, {name}! 🌟 Let me give you real, useful information.\n\nMental health = emotional + psychological + social well-being. It affects how we think, feel, and act.\n\n📊 Key facts:\n• 1 in 5 young people experience a mental health condition\n• It's as real and treatable as physical illness\n• Seeking help is STRENGTH, not weakness\n\n🔍 Signs you might need professional support:\n• Persistent sadness for 2+ weeks\n• Constant worry that interferes with daily life\n• Sleep problems most nights\n• Loss of interest in things you used to enjoy\n• Difficulty concentrating\n• Changes in appetite or energy\n\nDo any of these apply to you? If so, talking to a counselor isn't scary — it's like going to a doctor for a fever. JSPM Wagholi has a counseling cell, and iCall (9152987821) is free and confidential! 💛",
+
+        "Let me break this down for you, {name} 💛\n\n🧠 Depression is NOT just 'feeling sad'. It's a medical condition involving:\n• Persistent low mood for 2+ weeks\n• Loss of interest in activities\n• Changes in sleep, appetite, energy\n• Difficulty concentrating\n• Feelings of worthlessness\n• It's caused by brain chemistry, genetics, and life events — NOT weakness\n\n😰 Anxiety disorder is NOT just 'being nervous'. It involves:\n• Excessive worry that's hard to control\n• Physical symptoms (racing heart, sweating, tension)\n• Avoidance of situations\n• It interferes with daily life\n\n✅ Both are TREATABLE with:\n• Therapy (CBT is highly effective)\n• Lifestyle changes (exercise, sleep, nutrition)\n• Sometimes medication\n• Support from people who care\n\nWhat made you ask about this? Are you concerned about yourself or someone you know? I can guide you to the right help! 💙🫶",
+
+        "Wondering if you need therapy, {name}? Here's a simple check:\n\nYou might benefit from talking to a professional if:\n✅ Your feelings interfere with daily activities (school, sleep, eating)\n✅ You've been feeling this way for more than 2 weeks\n✅ Friends/family have expressed concern\n✅ You're using unhealthy coping (avoiding people, overeating, etc.)\n✅ You feel stuck and nothing seems to help\n\nIf you checked even ONE of these, it's worth reaching out:\n📞 JSPM Wagholi Counseling Cell (free for students!)\n📞 iCall: 9152987821 (free, confidential)\n📞 Vandrevala Foundation: 1860-2662-345 (24/7)\n\nTherapy isn't just for 'serious' problems — it's for anyone who wants to feel better. Think of it as a gym for your mind! 🧠💪💛"
       ]
     }
   },
-  "disclaimer": "I'm MindMate AI, your emotional support bestie! 💛 I'm NOT a licensed therapist or medical professional. For crisis support: iCall (9152987821) | Vandrevala Foundation (1860-2662-345) | AASRA (9820466726) | JSPM Wagholi Counseling Cell."
+  "disclaimer": "I'm MindMate AI, your emotional support companion! 💛 I provide support, ask questions to understand your situation, and suggest practical solutions. However, I am NOT a licensed therapist or medical professional. For crisis support: iCall (9152987821) | Vandrevala Foundation (1860-2662-345) | AASRA (9820466726) | JSPM Wagholi Counseling Cell."
 }
