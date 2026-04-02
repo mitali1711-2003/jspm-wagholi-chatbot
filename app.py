@@ -1,5 +1,5 @@
 """
-MindMate AI + JSPM Wagholi Campus Chatbot — Main Flask Application
+MindMate AI + CampusConnect AI — Main Flask Application
 ===================================================================
 A multilingual AI chatbot for JSPM Wagholi campus queries
 and mental health support (MindMate AI).
@@ -708,8 +708,11 @@ def api_upload_dataset():
     return jsonify({'success': success, 'message': 'Dataset uploaded and loaded'})
 
 
+# ─── Initialization (runs for both gunicorn and dev server) ──────
+
+setup()
+
 # ─── Run ──────────────────────────────────────────────────────────
 
 if __name__ == '__main__':
-    setup()
     app.run(debug=True, host='0.0.0.0', port=5000)

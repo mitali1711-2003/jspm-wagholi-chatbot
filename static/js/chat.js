@@ -174,7 +174,7 @@ function continueConversation() {
     const isMindmate = typeof BOT_TYPE !== 'undefined' && BOT_TYPE === 'mindmate';
     addBotMessage(isMindmate
         ? "Great, I'm glad you want to keep talking! I'm here for you. What else is on your mind? 💛"
-        : "Sure! I'm here to help. What else would you like to know about JSPM Wagholi? 😊"
+        : "Sure! I'm here to help. What else would you like to know? 😊"
     );
 }
 
@@ -194,7 +194,7 @@ function showReviewModal() {
     `;
 
     const isMindmate = typeof BOT_TYPE !== 'undefined' && BOT_TYPE === 'mindmate';
-    const botName = isMindmate ? 'MindMate AI' : 'JSPM Wagholi Chatbot';
+    const botName = isMindmate ? 'MindMate AI' : 'CampusConnect AI';
 
     overlay.innerHTML = `
         <div style="

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard — JSPM Wagholi | Campus Chatbot & MindMate AI</title>
+    <title>Dashboard — JSPM Wagholi | CampusConnect AI & MindMate AI</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
@@ -32,13 +32,13 @@
             <!-- Campus Chatbot Card — Goes to language selection first -->
             <div class="bot-card campus" onclick="window.location.href='{{ url_for('select_language', bot='campus') }}'">
                 <div class="bot-card-icon">&#127979;</div>
-                <h3>JSPM Wagholi Chatbot</h3>
+                <h3>CampusConnect AI</h3>
                 <p>Ask about admissions, courses, fees, hostel, placements, library, exams, and facilities at JSPM Wagholi Campus. Supports English, Hindi & Marathi.</p>
                 <button class="btn">Start Chatting &#8594;</button>
             </div>
 
-            <!-- MindMate AI Card — Goes to language selection first -->
-            <div class="bot-card mindmate" onclick="window.location.href='{{ url_for('select_language', bot='mindmate') }}'">
+            <!-- MindMate AI Card — Goes directly to chat (English only) -->
+            <div class="bot-card mindmate" onclick="window.location.href='{{ url_for('mindmate_chat') }}'">
                 <div class="bot-card-icon">&#128155;</div>
                 <h3>MindMate AI</h3>
                 <p>Your friendly emotional support companion. Talk about stress, anxiety, loneliness, academic pressure, or just chat. I'm here to listen, pookie! &#128155;</p>

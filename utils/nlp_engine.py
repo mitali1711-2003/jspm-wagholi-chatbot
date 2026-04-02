@@ -1,18 +1,37 @@
 """
 NLP Engine — handles language detection, semantic search, and response generation.
 Uses sentence-transformers for similarity matching and langdetect for language detection.
+Falls back to keyword matching if sentence-transformers is unavailable.
 CONFIGURED FOR JSPM WAGHOLI CAMPUS ONLY.
 """
 
 import json
 import os
+import re
 import random
-import numpy as np
+from difflib import SequenceMatcher
 from langdetect import detect
-from sentence_transformers import SentenceTransformer, util
 
-# Load model once globally (lazy initialization)
+# ─── Offline-safe imports ────────────────────────────────────────
+# Force offline mode so sentence-transformers uses cached model
+os.environ.setdefault('HF_HUB_OFFLINE', '1')
+os.environ.setdefault('TRANSFORMERS_OFFLINE', '1')
+
+_USE_SEMANTIC = False
 _model = None
+_np = None
+_st_util = None
+
+try:
+    import numpy as np
+    _np = np
+    from sentence_transformers import SentenceTransformer, util as st_util
+    _st_util = st_util
+    _USE_SEMANTIC = True
+except Exception:
+    print("[INFO] sentence-transformers not available — using keyword matching fallback")
+
+# ─── Global state ────────────────────────────────────────────────
 _faq_embeddings = None
 _faq_data = None
 _mindmate_data = None
@@ -20,9 +39,16 @@ _mindmate_data = None
 
 def get_model():
     """Lazy-load the sentence transformer model."""
-    global _model
+    global _model, _USE_SEMANTIC
+    if not _USE_SEMANTIC:
+        return None
     if _model is None:
-        _model = SentenceTransformer('all-MiniLM-L6-v2')
+        try:
+            _model = SentenceTransformer('all-MiniLM-L6-v2')
+        except Exception as e:
+            print(f"[WARN] Could not load sentence-transformers model: {e}")
+            _USE_SEMANTIC = False
+            return None
     return _model
 
 
@@ -47,7 +73,6 @@ def load_faqs_from_db():
 
     conn = get_db()
     cursor = conn.cursor()
-    # Load ONLY Wagholi campus FAQs
     cursor.execute("SELECT * FROM faqs WHERE is_active = 1")
     rows = cursor.fetchall()
     conn.close()
@@ -56,78 +81,140 @@ def load_faqs_from_db():
         return
 
     _faq_data = [dict(row) for row in rows]
+
+    # Build embeddings if semantic search is available
     model = get_model()
+    if model is not None:
+        questions = []
+        for faq in _faq_data:
+            combined = f"{faq['question_en']} {faq.get('question_hi', '')} {faq.get('question_mr', '')}"
+            questions.append(combined)
+        try:
+            _faq_embeddings = model.encode(questions, convert_to_tensor=True)
+        except Exception as e:
+            print(f"[WARN] Embedding computation failed: {e}")
+            _faq_embeddings = None
 
-    # Build combined question text for each FAQ (all languages for better matching)
-    questions = []
+
+def _keyword_match(user_message, language='en'):
+    """Fallback keyword-based FAQ matching when semantic search is unavailable."""
+    if not _faq_data:
+        return None, 0.0
+
+    message_lower = user_message.lower().strip()
+    message_words = set(re.sub(r'[^\w\s]', ' ', message_lower).split())
+
+    best_faq = None
+    best_score = 0.0
+
     for faq in _faq_data:
-        combined = f"{faq['question_en']} {faq.get('question_hi', '')} {faq.get('question_mr', '')}"
-        questions.append(combined)
+        # Check all language variants
+        questions = [
+            faq.get('question_en', '').lower(),
+            faq.get('question_hi', '').lower(),
+            faq.get('question_mr', '').lower(),
+        ]
 
-    _faq_embeddings = model.encode(questions, convert_to_tensor=True)
+        faq_score = 0.0
+        for q in questions:
+            if not q:
+                continue
+            # Sequence similarity
+            seq_score = SequenceMatcher(None, message_lower, q).ratio()
+            # Word overlap
+            q_words = set(re.sub(r'[^\w\s]', ' ', q).split())
+            if q_words:
+                overlap = len(message_words & q_words) / max(len(message_words), 1)
+            else:
+                overlap = 0.0
+            # Combined score
+            combined = (seq_score * 0.6) + (overlap * 0.4)
+            faq_score = max(faq_score, combined)
+
+        if faq_score > best_score:
+            best_score = faq_score
+            best_faq = faq
+
+    return best_faq, best_score
 
 
 def get_campus_response(user_message, language='en', campus='JSPM Wagholi'):
     """
     Find the best FAQ match for a JSPM Wagholi campus query.
-    Improved ranking: uses top-3 candidates and picks best by language match.
+    Uses semantic search if available, falls back to keyword matching.
     """
     global _faq_embeddings, _faq_data
 
-    if _faq_data is None or _faq_embeddings is None:
+    if _faq_data is None or (_USE_SEMANTIC and _faq_embeddings is None):
         load_faqs_from_db()
 
     if _faq_data is None or len(_faq_data) == 0:
-        fallback = _wagholi_fallback(language)
         return {
-            'answer': fallback,
+            'answer': _wagholi_fallback(language),
             'confidence': 0.0,
             'faq_id': None,
             'category': 'unknown'
         }
 
-    model = get_model()
-    query_embedding = model.encode(user_message, convert_to_tensor=True)
+    # ── Semantic search path ──
+    if _USE_SEMANTIC and _faq_embeddings is not None:
+        model = get_model()
+        if model is not None:
+            try:
+                query_embedding = model.encode(user_message, convert_to_tensor=True)
+                scores = _st_util.cos_sim(query_embedding, _faq_embeddings)[0]
 
-    # Compute cosine similarity
-    scores = util.cos_sim(query_embedding, _faq_embeddings)[0]
+                top_k = min(3, len(_faq_data))
+                top_indices = scores.argsort(descending=True)[:top_k]
 
-    # Get top 3 candidates for better ranking
-    top_k = min(3, len(_faq_data))
-    top_indices = scores.argsort(descending=True)[:top_k]
+                best_idx = int(top_indices[0])
+                best_score = float(scores[best_idx])
 
-    best_idx = int(top_indices[0])
-    best_score = float(scores[best_idx])
+                if best_score < 0.38:
+                    return {
+                        'answer': _wagholi_fallback(language),
+                        'confidence': best_score,
+                        'faq_id': None,
+                        'category': 'unknown'
+                    }
 
-    # Confidence threshold — 0.38 balances accuracy vs coverage
-    if best_score < 0.38:
-        fallback = _wagholi_fallback(language)
+                chosen_idx = best_idx
+                for idx in top_indices:
+                    idx = int(idx)
+                    faq = _faq_data[idx]
+                    answer_key = f'answer_{language}'
+                    if faq.get(answer_key) and float(scores[idx]) > best_score * 0.85:
+                        chosen_idx = idx
+                        break
+
+                faq = _faq_data[chosen_idx]
+                answer = faq.get(f'answer_{language}') or faq.get('answer_en', '')
+                return {
+                    'answer': answer,
+                    'confidence': float(scores[chosen_idx]),
+                    'faq_id': faq.get('id'),
+                    'category': faq.get('category', 'general')
+                }
+            except Exception as e:
+                print(f"[WARN] Semantic search failed, using keyword fallback: {e}")
+
+    # ── Keyword fallback path ──
+    best_faq, best_score = _keyword_match(user_message, language)
+
+    if best_faq is None or best_score < 0.25:
         return {
-            'answer': fallback,
+            'answer': _wagholi_fallback(language),
             'confidence': best_score,
             'faq_id': None,
             'category': 'unknown'
         }
 
-    # Among top candidates, prefer one with a non-empty answer in user's language
-    chosen_idx = best_idx
-    for idx in top_indices:
-        idx = int(idx)
-        faq = _faq_data[idx]
-        answer_key = f'answer_{language}'
-        if faq.get(answer_key) and float(scores[idx]) > best_score * 0.85:
-            chosen_idx = idx
-            break
-
-    faq = _faq_data[chosen_idx]
-    answer_key = f'answer_{language}'
-    answer = faq.get(answer_key) or faq.get('answer_en', '')
-
+    answer = best_faq.get(f'answer_{language}') or best_faq.get('answer_en', '')
     return {
         'answer': answer,
-        'confidence': float(scores[chosen_idx]),
-        'faq_id': faq.get('id'),
-        'category': faq.get('category', 'general')
+        'confidence': best_score,
+        'faq_id': best_faq.get('id'),
+        'category': best_faq.get('category', 'general')
     }
 
 
@@ -148,7 +235,6 @@ def get_mindmate_response(user_message, language='en', username='friend'):
     """
     global _mindmate_data
 
-    # Always reload from file to pick up changes (file is small, ~20KB)
     mindmate_path = os.path.join(
         os.path.dirname(os.path.dirname(__file__)),
         'database', 'mindmate_responses.json'
@@ -157,16 +243,11 @@ def get_mindmate_response(user_message, language='en', username='friend'):
         _mindmate_data = json.load(f)
 
     categories = _mindmate_data.get('categories', {})
-    # Normalize: lowercase, strip punctuation for matching
     message_lower = user_message.lower()
-    # Also create a clean version without apostrophes/punctuation for matching
-    import re
-    message_clean = re.sub(r"[''`]", "'", message_lower)  # normalize quotes
-    message_nopunc = re.sub(r"[^\w\s]", " ", message_lower)  # remove all punctuation
-    message_nopunc = ' '.join(message_nopunc.split())  # collapse spaces
+    message_clean = re.sub(r"[''`]", "'", message_lower)
+    message_nopunc = re.sub(r"[^\w\s]", " ", message_lower)
+    message_nopunc = ' '.join(message_nopunc.split())
 
-    # Check each category's keywords — weighted matching
-    # Priority: crisis > multi-word phrases > single-word exact > substring
     best_category = 'default'
     max_score = 0
 
@@ -187,27 +268,24 @@ def get_mindmate_response(user_message, language='en', username='friend'):
             for kw in keywords:
                 kw_lower = kw.lower()
                 kw_nopunc = re.sub(r"[^\w\s]", " ", kw_lower).strip()
-                # Multi-word phrases get much higher weight
                 is_phrase = ' ' in kw_lower
-                # Check against both original and cleaned message
                 matched = (kw_lower in message_lower or
                           kw_nopunc in message_nopunc or
                           kw_lower in message_clean)
                 if matched:
                     if is_phrase:
-                        score += 5  # Multi-word phrases are strong signals
+                        score += 5
                     elif f' {kw_lower} ' in f' {message_nopunc} ':
-                        score += 3  # Exact whole-word match
+                        score += 3
                     else:
-                        score += 1  # Substring match
+                        score += 1
             if score > max_score:
                 max_score = score
                 best_category = cat_name
 
     responses = categories.get(best_category, categories['default']).get('responses', [])
-    chosen = random.choice(responses) if responses else "I'm here for you, {name}. Tell me more about how you're feeling. 💛"
+    chosen = random.choice(responses) if responses else "I'm here for you, {name}. Tell me more about how you're feeling."
 
-    # Replace {name} placeholder with actual username
     display_name = username.capitalize() if username and username != 'friend' else 'friend'
     chosen = chosen.replace('{name}', display_name)
 
@@ -240,5 +318,5 @@ def reload_faqs():
     global _faq_embeddings, _faq_data, _mindmate_data
     _faq_embeddings = None
     _faq_data = None
-    _mindmate_data = None  # Also reload MindMate responses
+    _mindmate_data = None
     load_faqs_from_db()

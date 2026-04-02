@@ -18,12 +18,6 @@
                 </div>
             </div>
             <div class="chat-header-right">
-                <!-- Language switcher for MindMate too -->
-                <select class="lang-select" id="langSelect" onchange="switchLanguage(this.value)">
-                    <option value="en" {% if selected_language == 'en' %}selected{% endif %}>English</option>
-                    <option value="hi" {% if selected_language == 'hi' %}selected{% endif %}>Hindi (&#2361;&#2367;&#2344;&#2381;&#2342;&#2368;)</option>
-                    <option value="mr" {% if selected_language == 'mr' %}selected{% endif %}>Marathi (&#2350;&#2352;&#2366;&#2336;&#2368;)</option>
-                </select>
                 <button class="theme-toggle" onclick="toggleTheme()">&#9790;</button>
             </div>
         </div>
@@ -82,7 +76,7 @@
         // Initialize MindMate chat
         const BOT_TYPE = 'mindmate';
         const API_URL = '/api/chat/mindmate';
-        const SESSION_LANG = '{{ selected_language }}';
+        const SESSION_LANG = 'en';
 
         const USERNAME = '{{ username }}';
         const displayName = USERNAME.charAt(0).toUpperCase() + USERNAME.slice(1);
@@ -94,14 +88,6 @@
 
         document.getElementById('welcomeMsg').innerHTML = welcomeMessages[SESSION_LANG] || welcomeMessages.en;
         document.getElementById('welcomeTime').textContent = formatTime(new Date());
-
-        async function switchLanguage(lang) {
-            await fetch('/api/set-language', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ language: lang })
-            });
-        }
     </script>
 </body>
 </html>

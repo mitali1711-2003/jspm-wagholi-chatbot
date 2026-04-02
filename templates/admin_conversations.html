@@ -292,7 +292,7 @@
                     list.innerHTML = data.conversations.map(c => {
                         const time = new Date(c.created_at).toLocaleString();
                         const isMindmate = c.bot_type === 'mindmate';
-                        const botLabel = isMindmate ? 'MindMate AI' : 'Campus Bot';
+                        const botLabel = isMindmate ? 'MindMate AI' : 'CampusConnect AI';
                         const langMap = {en:'English', hi:'Hindi', mr:'Marathi'};
                         const ansPreview = c.bot_response.length > 150 ? c.bot_response.substring(0,150) + '...' : c.bot_response;
                         return `

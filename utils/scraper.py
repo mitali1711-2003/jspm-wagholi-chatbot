@@ -39,6 +39,16 @@ JSPM_WAGHOLI_DATA = {
             "answer_hi": "JSPM वाघोली कैंपस सर्वे नंबर 58, वाघोली, पुणे - 412207, महाराष्ट्र में स्थित है। यह पुणे-नगर रोड (वाघोली क्षेत्र) पर है, पुणे शहर केंद्र से आसानी से पहुंचा जा सकता है (लगभग 15 किमी)। नजदीकी स्थलों में केसनंद रोड और बकोरी फाटा शामिल हैं।",
             "answer_mr": "JSPM वाघोली कॅम्पस सर्वे नंबर 58, वाघोली, पुणे - 412207, महाराष्ट्र येथे आहे. हे पुणे-नगर रोड (वाघोली परिसर) वर स्थित आहे, पुणे शहर केंद्रापासून सहज उपलब्ध (अंदाजे 15 किमी). जवळचे ठळक ठिकाणे केसनंद रोड आणि बकोरी फाटा आहेत."
         },
+        # ── History / Establishment ──
+        {
+            "category": "about",
+            "question_en": "When was JSPM University established?",
+            "question_hi": "JSPM यूनिवर्सिटी की स्थापना कब हुई?",
+            "question_mr": "JSPM युनिव्हर्सिटीची स्थापना कधी झाली?",
+            "answer_en": "JSPM (Jayawantrao Sawant Pratishthan Mandal) was founded in 2000 by the late Hon. Jayawantrao Sawant. The JSPM Wagholi Campus was established in 2008 and has since grown into one of the largest educational campuses in Pune.\n\nJSPM University, Pune was officially established as a private university in 2023 under the Maharashtra Private Universities Act.\n\nKey milestones:\n• 2000 — JSPM Trust founded\n• 2001 — First engineering college (Narhe campus)\n• 2008 — Wagholi campus inaugurated\n• 2023 — JSPM University, Pune established\n• Today — 10+ institutes, 50+ programs, 15,000+ students across campuses",
+            "answer_hi": "JSPM (जयवंतराव सावंत प्रतिष्ठान मंडळ) की स्थापना 2000 में स्वर्गीय माननीय जयवंतराव सावंत द्वारा की गई थी। JSPM वाघोली कैंपस 2008 में स्थापित किया गया और तब से यह पुणे के सबसे बड़े शैक्षणिक परिसरों में से एक बन गया है।\n\nJSPM यूनिवर्सिटी, पुणे को 2023 में महाराष्ट्र निजी विश्वविद्यालय अधिनियम के तहत आधिकारिक रूप से निजी विश्वविद्यालय के रूप में स्थापित किया गया।\n\nप्रमुख उपलब्धियां:\n• 2000 — JSPM ट्रस्ट की स्थापना\n• 2001 — पहला इंजीनियरिंग कॉलेज (नरहे कैंपस)\n• 2008 — वाघोली कैंपस का उद्घाटन\n• 2023 — JSPM यूनिवर्सिटी, पुणे स्थापित\n• आज — 10+ संस्थान, 50+ कार्यक्रम, सभी कैंपस में 15,000+ छात्र",
+            "answer_mr": "JSPM (जयवंतराव सावंत प्रतिष्ठान मंडळ) ची स्थापना 2000 मध्ये कै. मा. जयवंतराव सावंत यांनी केली. JSPM वाघोली कॅम्पस 2008 मध्ये स्थापन करण्यात आला आणि तेव्हापासून तो पुण्यातील सर्वात मोठ्या शैक्षणिक कॅम्पसपैकी एक बनला आहे.\n\nJSPM युनिव्हर्सिटी, पुणे 2023 मध्ये महाराष्ट्र खाजगी विद्यापीठ कायद्यांतर्गत अधिकृतपणे खाजगी विद्यापीठ म्हणून स्थापन करण्यात आले.\n\nमहत्त्वाचे टप्पे:\n• 2000 — JSPM ट्रस्ट स्थापना\n• 2001 — पहिले अभियांत्रिकी महाविद्यालय (नरहे कॅम्पस)\n• 2008 — वाघोली कॅम्पसचे उद्घाटन\n• 2023 — JSPM युनिव्हर्सिटी, पुणे स्थापित\n• आज — 10+ संस्था, 50+ कार्यक्रम, सर्व कॅम्पसमध्ये 15,000+ विद्यार्थी"
+        },
         # ── Colleges at Wagholi ──
         {
             "category": "colleges",
@@ -178,6 +188,15 @@ JSPM_WAGHOLI_DATA = {
             "answer_en": "Yes, JSPM Wagholi Campus provides separate hostel facilities for boys and girls:\n\n- Boys Hostel: Multiple blocks with 2/3/4 sharing rooms\n- Girls Hostel: Secured campus with warden, CCTV, and biometric entry\n- Facilities: WiFi, mess (veg & non-veg options), RO water, laundry, gym, common room with TV\n- Hostel fees: ₹45,000 – ₹80,000 per year (depending on room type)\n- Mess: ₹35,000 – ₹45,000 per year\n\nContact hostel warden office for availability.",
             "answer_hi": "हां, JSPM वाघोली कैंपस लड़कों और लड़कियों के लिए अलग छात्रावास सुविधा प्रदान करता है:\n\n- बॉयज हॉस्टल: 2/3/4 शेयरिंग कमरों के साथ कई ब्लॉक\n- गर्ल्स हॉस्टल: वार्डन, CCTV और बायोमेट्रिक एंट्री के साथ सुरक्षित कैंपस\n- सुविधाएं: WiFi, मेस (शाकाहारी और मांसाहारी विकल्प), RO पानी, लॉन्ड्री, जिम\n- छात्रावास शुल्क: ₹45,000 – ₹80,000 प्रति वर्ष\n- मेस: ₹35,000 – ₹45,000 प्रति वर्ष",
             "answer_mr": "होय, JSPM वाघोली कॅम्पस मुला आणि मुलींसाठी स्वतंत्र वसतिगृह सुविधा प्रदान करतो:\n\n- मुलांचे वसतिगृह: 2/3/4 शेअरिंग खोल्यांसह अनेक ब्लॉक\n- मुलींचे वसतिगृह: वॉर्डन, CCTV आणि बायोमेट्रिक एन्ट्रीसह सुरक्षित कॅम्पस\n- सुविधा: WiFi, मेस (शाकाहारी आणि मांसाहारी पर्याय), RO पाणी, लॉन्ड्री, जिम\n- वसतिगृह शुल्क: ₹45,000 – ₹80,000 दरवर्षी\n- मेस: ₹35,000 – ₹45,000 दरवर्षी"
+        },
+        {
+            "category": "hostel",
+            "question_en": "What are the hostel fees at JSPM Wagholi?",
+            "question_hi": "JSPM वाघोली में छात्रावास की फीस कितनी है?",
+            "question_mr": "JSPM वाघोली येथे वसतिगृहाचे शुल्क किती आहे?",
+            "answer_en": "JSPM Wagholi Campus Hostel Fees (per year):\n\n• Hostel Room Charges: ₹45,000 – ₹80,000 per year (depending on room type — 2/3/4 sharing)\n• Mess Charges: ₹35,000 – ₹45,000 per year (veg & non-veg options)\n• Hostel Deposit (refundable): ₹5,000 – ₹10,000 (one-time)\n\nTotal approximate cost: ₹80,000 – ₹1,25,000 per year (hostel + mess combined)\n\nBoys and girls hostels are available separately with WiFi, laundry, gym, and 24/7 security.\nContact hostel warden office for current availability and exact pricing.",
+            "answer_hi": "JSPM वाघोली कैंपस छात्रावास शुल्क (प्रति वर्ष):\n\n• छात्रावास कमरे का शुल्क: ₹45,000 – ₹80,000 प्रति वर्ष (कमरे के प्रकार पर निर्भर — 2/3/4 शेयरिंग)\n• मेस शुल्क: ₹35,000 – ₹45,000 प्रति वर्ष (शाकाहारी और मांसाहारी विकल्प)\n• छात्रावास जमा (वापसी योग्य): ₹5,000 – ₹10,000 (एक बार)\n\nकुल अनुमानित लागत: ₹80,000 – ₹1,25,000 प्रति वर्ष (छात्रावास + मेस)\n\nलड़कों और लड़कियों के लिए अलग छात्रावास WiFi, लॉन्ड्री, जिम और 24/7 सुरक्षा के साथ उपलब्ध हैं।\nवर्तमान उपलब्धता के लिए छात्रावास वार्डन कार्यालय से संपर्क करें।",
+            "answer_mr": "JSPM वाघोली कॅम्पस वसतिगृह शुल्क (दरवर्षी):\n\n• वसतिगृह खोलीचे शुल्क: ₹45,000 – ₹80,000 दरवर्षी (खोलीच्या प्रकारावर अवलंबून — 2/3/4 शेअरिंग)\n• मेस शुल्क: ₹35,000 – ₹45,000 दरवर्षी (शाकाहारी आणि मांसाहारी पर्याय)\n• वसतिगृह ठेव (परतावा): ₹5,000 – ₹10,000 (एकदा)\n\nएकूण अंदाजे खर्च: ₹80,000 – ₹1,25,000 दरवर्षी (वसतिगृह + मेस)\n\nमुलांसाठी आणि मुलींसाठी स्वतंत्र वसतिगृह WiFi, लॉन्ड्री, जिम आणि 24/7 सुरक्षेसह उपलब्ध आहेत.\nसध्याच्या उपलब्धतेसाठी वसतिगृह वॉर्डन कार्यालयाशी संपर्क साधा."
         },
         # ── Facilities ──
         {
