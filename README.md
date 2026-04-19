@@ -6,6 +6,21 @@ A dual-bot Flask web application providing **campus information** and **mental h
 
 ---
 
+## Project Description (For Resume)
+
+> **CampusConnect & MindMate AI** — Built a full-stack AI-powered dual-chatbot web application using **Flask, Python, NLP, and SQLite**. The system features two intelligent bots: **CampusConnect AI**, which answers 100+ campus FAQs using semantic search powered by sentence-transformers (all-MiniLM-L6-v2) with cosine similarity matching, and **MindMate AI**, a mental health support bot with crisis detection and weighted keyword classification across 10 emotional categories. Implemented **trilingual support** (English, Hindi, Marathi) with human-written translations, **voice input** via Web Speech API, **bcrypt-based authentication** with role-based access control, and a comprehensive **admin panel** with analytics dashboards, conversation monitoring, and security logging (suspicious IP detection). The NLP pipeline includes a graceful **offline fallback** from ML-based semantic search to keyword matching, ensuring 100% uptime regardless of model availability. Deployed on **Railway** with Gunicorn, handling concurrent users with WAL-mode SQLite.
+>
+> **Key Technologies:** Python, Flask, SQLite, sentence-transformers (PyTorch), NLP, bcrypt, REST APIs, Jinja2, JavaScript, CSS3, Gunicorn, Railway
+>
+> **Highlights:**
+> - Designed and implemented a semantic search engine with 384-dimensional embeddings and confidence-scored responses
+> - Built a mental health bot with priority-based crisis detection and personalized response routing
+> - Developed a full admin dashboard with real-time analytics, conversation tracking, and security monitoring
+> - Engineered an offline-resilient architecture with automatic ML-to-keyword fallback
+> - Supported 3 languages with voice input across all interfaces
+
+---
+
 ## Table of Contents
 
 - [Features](#features)
@@ -455,3 +470,9 @@ Developed for **JSPM University, Wagholi Campus, Pune**.
 ## License
 
 This project is developed for educational purposes at JSPM University, Wagholi Campus, Pune.
+
+---
+
+## About This Project
+
+This project is a full-stack AI-powered dual-chatbot platform built for JSPM University's Wagholi Campus. It combines **CampusConnect AI** — a semantic search-driven FAQ bot covering admissions, placements, hostel, courses, and more — with **MindMate AI**, a mental health support companion featuring crisis detection and emotionally aware responses. The application supports three languages (English, Hindi, Marathi), voice input, secure authentication, and a comprehensive admin panel with analytics and security monitoring. Designed to run both online and offline, it ensures students always have access to campus information and mental wellness support.

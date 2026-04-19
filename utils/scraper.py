@@ -371,8 +371,8 @@ def scrape_jspm_wagholi():
 
         # Try scraping the main JSPM page for any updates
         urls = [
-            'https://www.jspmrscoe.edu.in/',
-            'https://www.jscoewagholi.edu.in/',
+            'https://jspmuni.ac.in/',
+    
         ]
 
         scraped_info = []
