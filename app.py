@@ -14,6 +14,8 @@ from flask import (
     Flask, render_template, request, jsonify,
     redirect, url_for, session, flash
 )
+from flask_limiter import Limiter
+from flask_limiter.util import get_remote_address
 
 from models.database import get_db, init_db, load_dataset_to_db
 from utils.auth import hash_password, check_password
@@ -23,7 +25,16 @@ from utils.nlp_engine import (
 )
 
 app = Flask(__name__)
-app.secret_key = os.environ.get('SECRET_KEY', 'jspm-wagholi-mindmate-secret-2024')
+
+SECRET_KEY = os.environ.get('SECRET_KEY', None)
+if not SECRET_KEY:
+    raise RuntimeError(
+        "SECRET_KEY environment variable is not set. "
+        "Export it before starting the app: export SECRET_KEY='your-random-secret'"
+    )
+app.secret_key = SECRET_KEY
+
+limiter = Limiter(get_remote_address, app=app, default_limits=[])
 
 # ─── Initialization ───────────────────────────────────────────────
 
@@ -258,6 +269,7 @@ def api_contact():
 # ─── API Routes ───────────────────────────────────────────────────
 
 @app.route('/api/chat/campus', methods=['POST'])
+@limiter.limit("30/minute")
 @login_required
 def api_campus_chat():
     """Process a JSPM Wagholi campus chatbot query."""
@@ -302,6 +314,7 @@ def api_campus_chat():
 
 
 @app.route('/api/chat/mindmate', methods=['POST'])
+@limiter.limit("30/minute")
 @login_required
 def api_mindmate_chat():
     """Process a MindMate AI query."""

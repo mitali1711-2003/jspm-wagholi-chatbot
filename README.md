@@ -203,14 +203,12 @@ Open **http://127.0.0.1:5000** in your browser.
 gunicorn app:app --bind 0.0.0.0:5000 --timeout 120 --workers 2
 ```
 
-### Default Admin Credentials
+### Create Admin User
 
-| Field | Value |
-|-------|-------|
-| Username | `admin` |
-| Password | `admin123` |
-
-> **Important:** Change the admin password in production by editing `create_admin.py` or via the database.
+```bash
+export ADMIN_PASSWORD='your-secure-password'
+python create_admin.py
+```
 
 ---
 
@@ -242,7 +240,8 @@ The `railway.json` config:
 
 | Variable | Required | Default | Description |
 |----------|----------|---------|-------------|
-| `SECRET_KEY` | Yes | `jspm-wagholi-mindmate-secret-2024` | Flask session secret (change in production!) |
+| `SECRET_KEY` | **Yes** | — | Flask session encryption key (app refuses to start without it) |
+| `ADMIN_PASSWORD` | **Yes** (for `create_admin.py`) | — | Password for the admin user |
 | `PORT` | Auto | `5000` | Set automatically by Railway/Render |
 | `HF_HUB_OFFLINE` | No | `1` | Prevents HuggingFace network calls (uses cached model) |
 | `TRANSFORMERS_OFFLINE` | No | `1` | Same as above for transformers library |
@@ -419,7 +418,8 @@ The campus chatbot covers the following categories for JSPM Wagholi:
 
 | Variable | Required | Default | Description |
 |----------|----------|---------|-------------|
-| `SECRET_KEY` | Yes (in prod) | `jspm-wagholi-mindmate-secret-2024` | Flask session encryption key |
+| `SECRET_KEY` | **Yes** | — | Flask session encryption key (app refuses to start without it) |
+| `ADMIN_PASSWORD` | **Yes** (for `create_admin.py`) | — | Password for the admin user |
 | `PORT` | No | `5000` | Server port (auto-set by Railway/Render) |
 | `HF_HUB_OFFLINE` | No | `1` | Use cached HuggingFace model (no network calls) |
 | `TRANSFORMERS_OFFLINE` | No | `1` | Same as above for transformers library |
@@ -449,9 +449,9 @@ If the `all-MiniLM-L6-v2` model can't be downloaded, the app automatically falls
 ### Admin login not working
 Run the admin creation script:
 ```bash
+export ADMIN_PASSWORD='your-secure-password'
 python create_admin.py
 ```
-Default credentials: `admin` / `admin123`
 
 ### Dependencies fail to install
 Make sure you're using Python 3.11+:
