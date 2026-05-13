@@ -21,6 +21,79 @@
         .btn-icon:hover { background:var(--border-light); }
         .empty-state { text-align:center; padding:60px 20px; color: var(--text-muted,#888); font-size:15px; }
 
+        /* PDF Upload Card */
+        .pdf-card {
+            background: var(--card-light);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow);
+            padding: 24px 28px;
+            margin-bottom: 28px;
+            border-left: 4px solid #f59e0b;
+        }
+        .pdf-card-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 18px;
+        }
+        .pdf-card-header h3 { font-size: 16px; font-weight: 700; margin: 0; }
+        .pdf-card-header span { font-size: 20px; }
+        .pdf-status-row {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+        .pdf-status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 5px 14px;
+            border-radius: 999px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+        .pdf-status-badge.exists { background: #d1fae5; color: #065f46; }
+        .pdf-status-badge.missing { background: #fef3c7; color: #92400e; }
+        .pdf-upload-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 16px;
+            flex-wrap: wrap;
+        }
+        .pdf-file-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 9px 18px;
+            border: 2px dashed var(--border-light);
+            border-radius: var(--radius);
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: border-color 0.2s, background 0.2s;
+        }
+        .pdf-file-label:hover { border-color: var(--primary); background: rgba(91,127,214,0.05); }
+        #pdfFileInput { display: none; }
+        .pdf-filename { font-size: 13px; color: var(--text-muted); font-style: italic; }
+        .pdf-actions { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+        .pdf-progress {
+            display: none;
+            height: 4px;
+            background: var(--border-light);
+            border-radius: 4px;
+            margin-top: 12px;
+            overflow: hidden;
+        }
+        .pdf-progress-bar {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, var(--primary), #7EB3FF);
+            border-radius: 4px;
+            transition: width 0.3s;
+        }
+
         /* Modal */
         .modal-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,.5); z-index:1000; align-items:center; justify-content:center; }
         .modal-overlay.open { display:flex; }
@@ -62,6 +135,40 @@
         <div class="tt-header">
             <h2>&#128197; Exam Timetable</h2>
             <button class="btn btn-primary" onclick="openModal()">+ Add Entry</button>
+        </div>
+
+        <!-- PDF Upload Card -->
+        <div class="pdf-card">
+            <div class="pdf-card-header">
+                <span>&#128196;</span>
+                <h3>Timetable PDF</h3>
+            </div>
+
+            <div class="pdf-status-row">
+                <span class="pdf-status-badge missing" id="pdfStatusBadge">&#9679; Checking...</span>
+                <a href="/timetable-pdf" target="_blank" class="btn btn-secondary" id="pdfViewBtn" style="display:none;padding:7px 16px;font-size:13px;">&#128065; View PDF</a>
+                <button class="btn" id="pdfDeleteBtn" onclick="deletePdf()"
+                    style="display:none;background:#fee2e2;color:#991b1b;border-color:#fca5a5;padding:7px 16px;font-size:13px;">
+                    &#128465; Remove
+                </button>
+            </div>
+
+            <div class="pdf-upload-row">
+                <label class="pdf-file-label" for="pdfFileInput">
+                    &#128196; Choose PDF
+                </label>
+                <input type="file" id="pdfFileInput" accept="application/pdf" onchange="onPdfFileChosen(this)">
+                <span class="pdf-filename" id="pdfFilename">No file chosen</span>
+                <button class="btn btn-primary" id="pdfUploadBtn" onclick="uploadPdf()"
+                    style="display:none;padding:9px 20px;font-size:13px;">
+                    &#8593; Upload
+                </button>
+            </div>
+
+            <div class="pdf-progress" id="pdfProgress">
+                <div class="pdf-progress-bar" id="pdfProgressBar"></div>
+            </div>
+            <p id="pdfMsg" style="font-size:13px;margin-top:10px;display:none;"></p>
         </div>
 
         <div class="tt-table-wrap">
@@ -238,6 +345,91 @@
     });
 
     loadEntries();
+
+    // ── PDF management ──────────────────────────────────────────
+    async function checkPdfStatus() {
+        const res = await fetch('/api/admin/timetable/pdf-status');
+        const data = await res.json();
+        const badge = document.getElementById('pdfStatusBadge');
+        const viewBtn = document.getElementById('pdfViewBtn');
+        const delBtn = document.getElementById('pdfDeleteBtn');
+        if (data.exists) {
+            badge.textContent = '● PDF uploaded';
+            badge.className = 'pdf-status-badge exists';
+            viewBtn.style.display = '';
+            delBtn.style.display = '';
+        } else {
+            badge.textContent = '● No PDF uploaded';
+            badge.className = 'pdf-status-badge missing';
+            viewBtn.style.display = 'none';
+            delBtn.style.display = 'none';
+        }
+    }
+
+    function onPdfFileChosen(input) {
+        const file = input.files[0];
+        const nameEl = document.getElementById('pdfFilename');
+        const uploadBtn = document.getElementById('pdfUploadBtn');
+        if (file) {
+            nameEl.textContent = file.name;
+            uploadBtn.style.display = '';
+        } else {
+            nameEl.textContent = 'No file chosen';
+            uploadBtn.style.display = 'none';
+        }
+    }
+
+    async function uploadPdf() {
+        const input = document.getElementById('pdfFileInput');
+        const file = input.files[0];
+        if (!file) return;
+
+        const progress = document.getElementById('pdfProgress');
+        const bar = document.getElementById('pdfProgressBar');
+        const msg = document.getElementById('pdfMsg');
+        const btn = document.getElementById('pdfUploadBtn');
+
+        progress.style.display = 'block';
+        bar.style.width = '30%';
+        btn.disabled = true;
+        msg.style.display = 'none';
+
+        const fd = new FormData();
+        fd.append('pdf', file);
+
+        try {
+            bar.style.width = '70%';
+            const res = await fetch('/api/admin/timetable/upload-pdf', { method: 'POST', body: fd });
+            const data = await res.json();
+            bar.style.width = '100%';
+            if (data.success) {
+                msg.textContent = '✓ PDF uploaded successfully.';
+                msg.style.color = 'var(--success, #059669)';
+                input.value = '';
+                document.getElementById('pdfFilename').textContent = 'No file chosen';
+                document.getElementById('pdfUploadBtn').style.display = 'none';
+                checkPdfStatus();
+            } else {
+                msg.textContent = '✗ ' + (data.error || 'Upload failed.');
+                msg.style.color = '#e53e3e';
+            }
+        } catch(e) {
+            msg.textContent = '✗ Upload failed. Please try again.';
+            msg.style.color = '#e53e3e';
+        }
+        msg.style.display = 'block';
+        btn.disabled = false;
+        setTimeout(() => { progress.style.display = 'none'; bar.style.width = '0%'; }, 1200);
+    }
+
+    async function deletePdf() {
+        if (!confirm('Remove the uploaded timetable PDF?')) return;
+        const res = await fetch('/api/admin/timetable/delete-pdf', { method: 'DELETE' });
+        const data = await res.json();
+        if (data.success) checkPdfStatus();
+    }
+
+    checkPdfStatus();
     </script>
 </body>
 </html>

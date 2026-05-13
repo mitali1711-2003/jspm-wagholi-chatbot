@@ -1110,6 +1110,51 @@ def api_admin_timetable_delete(entry_id):
     return jsonify({'success': True})
 
 
+TIMETABLE_PDF_PATH = (
+    '/tmp/timetable.pdf'
+    if os.environ.get('VERCEL')
+    else os.path.join(os.path.dirname(__file__), 'static', 'docs', 'timetable.pdf')
+)
+
+
+@app.route('/api/admin/timetable/pdf-status', methods=['GET'])
+@admin_required
+def api_admin_timetable_pdf_status():
+    exists = os.path.isfile(TIMETABLE_PDF_PATH)
+    return jsonify({'exists': exists})
+
+
+@app.route('/api/admin/timetable/upload-pdf', methods=['POST'])
+@admin_required
+def api_admin_timetable_upload_pdf():
+    if 'pdf' not in request.files:
+        return jsonify({'error': 'No file uploaded'}), 400
+    f = request.files['pdf']
+    if f.filename == '':
+        return jsonify({'error': 'No file selected'}), 400
+    if not f.filename.lower().endswith('.pdf'):
+        return jsonify({'error': 'Only PDF files are allowed'}), 400
+    f.save(TIMETABLE_PDF_PATH)
+    return jsonify({'success': True})
+
+
+@app.route('/api/admin/timetable/delete-pdf', methods=['DELETE'])
+@admin_required
+def api_admin_timetable_delete_pdf():
+    if os.path.isfile(TIMETABLE_PDF_PATH):
+        os.remove(TIMETABLE_PDF_PATH)
+    return jsonify({'success': True})
+
+
+@app.route('/timetable-pdf')
+@login_required
+def serve_timetable_pdf():
+    if not os.path.isfile(TIMETABLE_PDF_PATH):
+        return 'No timetable PDF uploaded yet.', 404
+    from flask import send_file
+    return send_file(TIMETABLE_PDF_PATH, mimetype='application/pdf')
+
+
 # ─── Profile + Mood Tracker ───────────────────────────────────────
 
 @app.route('/profile')

@@ -2000,7 +2000,6 @@ a { text-decoration: none; color: inherit; }
     border-radius: var(--radius-lg);
     padding: 24px 28px;
     box-shadow: var(--shadow);
-    margin-bottom: 32px;
     border-left: 4px solid var(--primary);
 }
 
@@ -2064,7 +2063,6 @@ a { text-decoration: none; color: inherit; }
     border-radius: var(--radius-lg);
     padding: 24px 28px;
     box-shadow: var(--shadow);
-    margin-bottom: 32px;
     border-left: 4px solid var(--success);
 }
 
@@ -2081,6 +2079,9 @@ a { text-decoration: none; color: inherit; }
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     gap: 12px;
+    max-height: 280px;
+    overflow-y: auto;
+    padding-right: 4px;
 }
 
 .canteen-category {
@@ -2455,6 +2456,7 @@ a { text-decoration: none; color: inherit; }
     grid-template-columns: 1fr 1fr;
     gap: 24px;
     margin-bottom: 40px;
+    align-items: flex-start;
 }
 
 @media (max-width: 700px) {
