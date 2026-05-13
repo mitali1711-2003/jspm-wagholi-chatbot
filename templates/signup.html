@@ -7,112 +7,327 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <div class="auth-page">
-        <div class="auth-container">
-            <div class="auth-logo">
-                <h1>Create Account</h1>
-                <p>Join us and explore campus AI assistants</p>
+<div class="auth-page auth-split">
+
+    <!-- ══════════ LEFT: Creative Info Panel ══════════ -->
+    <div class="auth-info-panel">
+
+        <div class="aip-blob aip-blob-1"></div>
+        <div class="aip-blob aip-blob-2"></div>
+        <div class="aip-blob aip-blob-3"></div>
+
+        <div class="aip-header">
+            <div class="aip-campus-chip">
+                <span class="aip-chip-dot"></span>
+                JSPM University · Wagholi Campus
             </div>
 
-            {% with messages = get_flashed_messages(with_categories=true) %}
-            {% if messages %}
-                {% for category, message in messages %}
-                <div class="flash-message flash-{{ category }}">{{ message }}</div>
-                {% endfor %}
-            {% endif %}
-            {% endwith %}
+            <div class="aip-logo-wrap">
+                <div class="aip-logo-ring"></div>
+                <span class="aip-logo-emoji">🎓</span>
+            </div>
 
-            <form method="POST" action="{{ url_for('signup') }}">
-                <div class="form-group">
-                    <label for="username">Username</label>
-                    <input type="text" id="username" name="username"
-                           placeholder="Choose a username" required autofocus>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email"
-                           placeholder="Enter your email" required>
-                </div>
+            <h2 class="aip-title">
+                CampusConnect AI
+                <span class="aip-title-accent">+ MindMate AI</span>
+            </h2>
 
-                <!-- Feature 10: Password field with strength meter -->
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password"
-                           placeholder="Min. 6 characters" required minlength="6"
-                           oninput="checkPasswordStrength(this.value)">
-                    <!-- Strength bar -->
-                    <div class="pw-strength-bar">
-                        <div class="pw-strength-fill" id="pwStrengthFill"></div>
+            <p class="aip-tagline">
+                <span id="aipTyping"></span><span class="aip-cursor">|</span>
+            </p>
+        </div>
+
+        <div class="aip-stats">
+            <div class="aip-stat">
+                <span class="aip-stat-num">100+</span>
+                <span class="aip-stat-label">FAQs</span>
+            </div>
+            <div class="aip-stat">
+                <span class="aip-stat-num">3</span>
+                <span class="aip-stat-label">Languages</span>
+            </div>
+            <div class="aip-stat">
+                <span class="aip-stat-num">31</span>
+                <span class="aip-stat-label">Map Spots</span>
+            </div>
+            <div class="aip-stat">
+                <span class="aip-stat-num">10</span>
+                <span class="aip-stat-label">Mood Topics</span>
+            </div>
+        </div>
+
+        <div class="aip-section-divider"><span>Features</span></div>
+
+        <div class="aip-scroll-wrapper">
+            <div class="aip-scroll-track">
+
+                <div class="aip-card aip-card--blue">
+                    <div class="aip-icon-bubble aip-bubble--blue">🤖</div>
+                    <div class="aip-card-body">
+                        <div class="aip-card-top"><h4>CampusConnect AI</h4><span class="aip-badge aip-badge--blue">AI</span></div>
+                        <p>Ask anything about JSPM Wagholi — admissions, fees, courses, hostel, placements, library, transport, exams. 100+ FAQs answered instantly.</p>
                     </div>
-                    <span class="pw-strength-text" id="pwStrengthText"></span>
                 </div>
 
-                <div class="form-group">
-                    <label for="confirm_password">Confirm Password</label>
-                    <input type="password" id="confirm_password" name="confirm_password"
-                           placeholder="Re-enter password" required
-                           oninput="checkPasswordMatch()">
-                    <span class="pw-strength-text" id="pwMatchText"></span>
+                <div class="aip-card aip-card--pink">
+                    <div class="aip-icon-bubble aip-bubble--pink">💙</div>
+                    <div class="aip-card-body">
+                        <div class="aip-card-top"><h4>MindMate AI</h4><span class="aip-badge aip-badge--pink">Health</span></div>
+                        <p>A safe, empathetic space for stress, anxiety, academic pressure, loneliness, or motivation. Crisis detection built in for your safety.</p>
+                    </div>
                 </div>
 
-                <button type="submit" class="btn btn-primary">Create Account</button>
-            </form>
+                <div class="aip-card aip-card--teal">
+                    <div class="aip-icon-bubble aip-bubble--teal">🌐</div>
+                    <div class="aip-card-body">
+                        <div class="aip-card-top"><h4>Trilingual Support</h4><span class="aip-badge aip-badge--teal">i18n</span></div>
+                        <p>Chat in English, Hindi, or Marathi. All FAQs have human-written translations in all three languages. Switch anytime.</p>
+                    </div>
+                </div>
 
-            <div class="auth-footer">
-                Already have an account? <a href="{{ url_for('login') }}">Sign in</a>
+                <div class="aip-card aip-card--purple">
+                    <div class="aip-icon-bubble aip-bubble--purple">🎙️</div>
+                    <div class="aip-card-body">
+                        <div class="aip-card-top"><h4>Voice Input</h4><span class="aip-badge aip-badge--purple">Voice</span></div>
+                        <p>Speak your question instead of typing. Voice recognition adapts to your selected language automatically.</p>
+                    </div>
+                </div>
+
+                <div class="aip-card aip-card--blue">
+                    <div class="aip-icon-bubble aip-bubble--blue">🗺️</div>
+                    <div class="aip-card-body">
+                        <div class="aip-card-top"><h4>Interactive Campus Map</h4><span class="aip-badge aip-badge--blue">Map</span></div>
+                        <p>31 GPS-accurate markers — academic blocks, library, hostels, canteen, sports and more across the Wagholi campus.</p>
+                    </div>
+                </div>
+
+                <div class="aip-card aip-card--orange">
+                    <div class="aip-icon-bubble aip-bubble--orange">⏳</div>
+                    <div class="aip-card-body">
+                        <div class="aip-card-top"><h4>Exam Countdown</h4><span class="aip-badge aip-badge--orange">Timer</span></div>
+                        <p>Live countdown to your next SPPU exam on your dashboard. Never miss an important date again.</p>
+                    </div>
+                </div>
+
+                <div class="aip-card aip-card--teal">
+                    <div class="aip-icon-bubble aip-bubble--teal">🍱</div>
+                    <div class="aip-card-body">
+                        <div class="aip-card-top"><h4>Canteen Menu</h4><span class="aip-badge aip-badge--teal">Food</span></div>
+                        <p>Today's breakfast, lunch, snacks, and dinner from the campus canteen — updated daily by admin.</p>
+                    </div>
+                </div>
+
+                <div class="aip-card aip-card--pink">
+                    <div class="aip-icon-bubble aip-bubble--pink">📦</div>
+                    <div class="aip-card-body">
+                        <div class="aip-card-top"><h4>Lost &amp; Found Board</h4><span class="aip-badge aip-badge--pink">Board</span></div>
+                        <p>Post lost or found items, browse active listings, mark as resolved. All within the campus community.</p>
+                    </div>
+                </div>
+
+                <div class="aip-card aip-card--purple">
+                    <div class="aip-icon-bubble aip-bubble--purple">⭐</div>
+                    <div class="aip-card-body">
+                        <div class="aip-card-top"><h4>Faculty Feedback</h4><span class="aip-badge aip-badge--purple">Poll</span></div>
+                        <p>Rate your subject and faculty 1–5 stars with optional comment. Completely anonymous — identity never stored.</p>
+                    </div>
+                </div>
+
+                <div class="aip-card aip-card--orange">
+                    <div class="aip-icon-bubble aip-bubble--orange">📊</div>
+                    <div class="aip-card-body">
+                        <div class="aip-card-top"><h4>Mood Tracker</h4><span class="aip-badge aip-badge--orange">Tracker</span></div>
+                        <p>MindMate logs emotional trends over time. View your weekly mood chart and distribution on your profile page.</p>
+                    </div>
+                </div>
+
+                <div class="aip-card aip-card--blue">
+                    <div class="aip-icon-bubble aip-bubble--blue">📅</div>
+                    <div class="aip-card-body">
+                        <div class="aip-card-top"><h4>Academic Calendar</h4><span class="aip-badge aip-badge--blue">Docs</span></div>
+                        <p>Full 2025–26 academic calendar as an embedded PDF — holidays, exam schedules, important dates at a glance.</p>
+                    </div>
+                </div>
+
+                <div class="aip-card aip-card--teal">
+                    <div class="aip-icon-bubble aip-bubble--teal">🔒</div>
+                    <div class="aip-card-body">
+                        <div class="aip-card-top"><h4>Secure &amp; Private</h4><span class="aip-badge aip-badge--teal">Security</span></div>
+                        <p>Passwords are bcrypt-hashed. Sessions auto-expire at 35 min. Rate limiting prevents abuse. Your data is protected.</p>
+                    </div>
+                </div>
+
+                <!-- Duplicate for seamless loop -->
+                <div class="aip-card aip-card--blue">
+                    <div class="aip-icon-bubble aip-bubble--blue">🤖</div>
+                    <div class="aip-card-body">
+                        <div class="aip-card-top"><h4>CampusConnect AI</h4><span class="aip-badge aip-badge--blue">AI</span></div>
+                        <p>Ask anything about JSPM Wagholi — admissions, fees, courses, hostel, placements, library, transport, exams. 100+ FAQs answered instantly.</p>
+                    </div>
+                </div>
+                <div class="aip-card aip-card--pink">
+                    <div class="aip-icon-bubble aip-bubble--pink">💙</div>
+                    <div class="aip-card-body">
+                        <div class="aip-card-top"><h4>MindMate AI</h4><span class="aip-badge aip-badge--pink">Health</span></div>
+                        <p>A safe, empathetic space for stress, anxiety, academic pressure, loneliness, or motivation. Crisis detection built in.</p>
+                    </div>
+                </div>
+                <div class="aip-card aip-card--teal">
+                    <div class="aip-icon-bubble aip-bubble--teal">🌐</div>
+                    <div class="aip-card-body">
+                        <div class="aip-card-top"><h4>Trilingual Support</h4><span class="aip-badge aip-badge--teal">i18n</span></div>
+                        <p>Chat in English, Hindi, or Marathi. All FAQs have human-written translations in all three languages.</p>
+                    </div>
+                </div>
+                <div class="aip-card aip-card--purple">
+                    <div class="aip-icon-bubble aip-bubble--purple">🎙️</div>
+                    <div class="aip-card-body">
+                        <div class="aip-card-top"><h4>Voice Input</h4><span class="aip-badge aip-badge--purple">Voice</span></div>
+                        <p>Speak your question instead of typing. Voice recognition adapts to your selected language automatically.</p>
+                    </div>
+                </div>
+                <div class="aip-card aip-card--blue">
+                    <div class="aip-icon-bubble aip-bubble--blue">🗺️</div>
+                    <div class="aip-card-body">
+                        <div class="aip-card-top"><h4>Interactive Campus Map</h4><span class="aip-badge aip-badge--blue">Map</span></div>
+                        <p>31 GPS-accurate markers — academic blocks, library, hostels, canteen, sports and more.</p>
+                    </div>
+                </div>
+                <div class="aip-card aip-card--orange">
+                    <div class="aip-icon-bubble aip-bubble--orange">⏳</div>
+                    <div class="aip-card-body">
+                        <div class="aip-card-top"><h4>Exam Countdown</h4><span class="aip-badge aip-badge--orange">Timer</span></div>
+                        <p>Live countdown to your next SPPU exam on your dashboard. Never miss an important date again.</p>
+                    </div>
+                </div>
+
             </div>
+        </div>
+
+        <div class="aip-tag-strip">
+            <div class="aip-tag-track">
+                <span>🤖 Campus AI</span><span>💙 Mental Health</span>
+                <span>🌐 Trilingual</span><span>🎙️ Voice</span>
+                <span>🗺️ Campus Map</span><span>⏳ Countdown</span>
+                <span>🍱 Canteen</span><span>📦 Lost & Found</span>
+                <span>📊 Mood Tracker</span><span>🔒 Secure</span>
+                <span>🤖 Campus AI</span><span>💙 Mental Health</span>
+                <span>🌐 Trilingual</span><span>🎙️ Voice</span>
+                <span>🗺️ Campus Map</span><span>⏳ Countdown</span>
+                <span>🍱 Canteen</span><span>📦 Lost & Found</span>
+                <span>📊 Mood Tracker</span><span>🔒 Secure</span>
+            </div>
+        </div>
+
+    </div><!-- end auth-info-panel -->
+
+    <!-- ══════════ RIGHT: Signup Form ══════════ -->
+    <div class="auth-container">
+        <div class="auth-logo">
+            <h1>Create Account</h1>
+            <p>Join us and explore campus AI assistants</p>
+        </div>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+            <div class="flash-message flash-{{ category }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
+
+        <form method="POST" action="{{ url_for('signup') }}">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username"
+                       placeholder="Choose a username" required autofocus>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email"
+                       placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password"
+                       placeholder="Min. 6 characters" required minlength="6"
+                       oninput="checkPasswordStrength(this.value)">
+                <div class="pw-strength-bar">
+                    <div class="pw-strength-fill" id="pwStrengthFill"></div>
+                </div>
+                <span class="pw-strength-text" id="pwStrengthText"></span>
+            </div>
+            <div class="form-group">
+                <label for="confirm_password">Confirm Password</label>
+                <input type="password" id="confirm_password" name="confirm_password"
+                       placeholder="Re-enter password" required
+                       oninput="checkPasswordMatch()">
+                <span class="pw-strength-text" id="pwMatchText"></span>
+            </div>
+            <button type="submit" class="btn btn-primary">Create Account</button>
+        </form>
+
+        <div class="auth-footer">
+            Already have an account? <a href="{{ url_for('login') }}">Sign in</a>
         </div>
     </div>
 
-    <script>
-    function checkPasswordStrength(pw) {
-        const fill = document.getElementById('pwStrengthFill');
-        const text = document.getElementById('pwStrengthText');
+</div><!-- end auth-split -->
 
-        if (!pw) {
-            fill.style.width = '0%';
-            text.textContent = '';
-            return;
-        }
+<script>
+/* Typing tagline */
+const phrases = [
+    'Join thousands of JSPM students',
+    'Campus answers in seconds',
+    'Mental health support, 24/7',
+    'English · Hindi · Marathi',
+    'Your AI campus companion',
+];
+let pi = 0, ci = 0, del = false;
+const el = document.getElementById('aipTyping');
+function type() {
+    const p = phrases[pi];
+    el.textContent = del ? p.slice(0, --ci) : p.slice(0, ++ci);
+    if (!del && ci === p.length)  { del = true;  return setTimeout(type, 2000); }
+    if (del  && ci === 0)         { del = false; pi = (pi + 1) % phrases.length; }
+    setTimeout(type, del ? 38 : 65);
+}
+type();
 
-        let score = 0;
-        if (pw.length >= 6)  score++;
-        if (pw.length >= 10) score++;
-        if (/[A-Z]/.test(pw)) score++;
-        if (/[0-9]/.test(pw)) score++;
-        if (/[^A-Za-z0-9]/.test(pw)) score++;
+/* Password strength */
+function checkPasswordStrength(pw) {
+    const fill = document.getElementById('pwStrengthFill');
+    const text = document.getElementById('pwStrengthText');
+    if (!pw) { fill.style.width = '0%'; text.textContent = ''; return; }
+    let score = 0;
+    if (pw.length >= 6)  score++;
+    if (pw.length >= 10) score++;
+    if (/[A-Z]/.test(pw)) score++;
+    if (/[0-9]/.test(pw)) score++;
+    if (/[^A-Za-z0-9]/.test(pw)) score++;
+    const levels = [
+        { pct: '20%', color: '#E27070', label: 'Very Weak' },
+        { pct: '40%', color: '#E4A25A', label: 'Weak'      },
+        { pct: '60%', color: '#E4C35A', label: 'Fair'      },
+        { pct: '80%', color: '#5EBD8A', label: 'Strong'    },
+        { pct: '100%',color: '#2E9E68', label: 'Very Strong'}
+    ];
+    const lvl = levels[Math.min(score - 1, 4)] || levels[0];
+    fill.style.width = lvl.pct;
+    fill.style.background = lvl.color;
+    text.textContent = lvl.label;
+    text.style.color = lvl.color;
+    checkPasswordMatch();
+}
 
-        const levels = [
-            { pct: '20%', color: '#E27070', label: 'Very Weak' },
-            { pct: '40%', color: '#E4A25A', label: 'Weak'      },
-            { pct: '60%', color: '#E4C35A', label: 'Fair'      },
-            { pct: '80%', color: '#5EBD8A', label: 'Strong'    },
-            { pct: '100%',color: '#2E9E68', label: 'Very Strong'}
-        ];
-
-        const lvl = levels[Math.min(score - 1, 4)] || levels[0];
-        fill.style.width = lvl.pct;
-        fill.style.background = lvl.color;
-        text.textContent = lvl.label;
-        text.style.color = lvl.color;
-
-        // Also check match if confirm field has value
-        checkPasswordMatch();
-    }
-
-    function checkPasswordMatch() {
-        const pw  = document.getElementById('password').value;
-        const cpw = document.getElementById('confirm_password').value;
-        const el  = document.getElementById('pwMatchText');
-        if (!cpw) { el.textContent = ''; return; }
-        if (pw === cpw) {
-            el.textContent = 'Passwords match';
-            el.style.color = '#5EBD8A';
-        } else {
-            el.textContent = 'Passwords do not match';
-            el.style.color = '#E27070';
-        }
-    }
-    </script>
+function checkPasswordMatch() {
+    const pw  = document.getElementById('password').value;
+    const cpw = document.getElementById('confirm_password').value;
+    const el  = document.getElementById('pwMatchText');
+    if (!cpw) { el.textContent = ''; return; }
+    if (pw === cpw) { el.textContent = 'Passwords match';      el.style.color = '#5EBD8A'; }
+    else            { el.textContent = 'Passwords do not match'; el.style.color = '#E27070'; }
+}
+</script>
 </body>
 </html>

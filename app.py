@@ -26,12 +26,15 @@ from utils.nlp_engine import (
 
 app = Flask(__name__)
 
-SECRET_KEY = os.environ.get('SECRET_KEY', None)
+SECRET_KEY = os.environ.get('SECRET_KEY')
 if not SECRET_KEY:
-    raise RuntimeError(
-        "SECRET_KEY environment variable is not set. "
-        "Export it before starting the app: export SECRET_KEY='your-random-secret'"
-    )
+    if os.environ.get('FLASK_ENV') == 'production':
+        raise RuntimeError(
+            "SECRET_KEY environment variable is not set. "
+            "Export it before starting the app: export SECRET_KEY='your-random-secret'"
+        )
+    import secrets
+    SECRET_KEY = secrets.token_hex(32)
 app.secret_key = SECRET_KEY
 
 limiter = Limiter(get_remote_address, app=app, default_limits=[])
@@ -212,13 +215,14 @@ def logout():
 @app.route('/dashboard')
 @login_required
 def dashboard():
-    exam_path = os.path.join(os.path.dirname(__file__), 'database', 'exam_dates.json')
-    try:
-        with open(exam_path, 'r', encoding='utf-8') as f:
-            exam_data = json.load(f)
-        exam_dates = exam_data.get('exams', [])
-    except Exception:
-        exam_dates = []
+    conn = get_db()
+    rows = conn.execute(
+        "SELECT exam_name, exam_date, branch, semester, note FROM timetable WHERE is_active=1 ORDER BY exam_date ASC"
+    ).fetchall()
+    conn.close()
+    exam_dates = [{'name': r['exam_name'], 'date': r['exam_date'],
+                   'branch': r['branch'], 'semester': r['semester'], 'note': r['note']}
+                  for r in rows]
     return render_template('dashboard.html',
                            username=session.get('username'),
                            exam_dates=exam_dates)
@@ -1038,6 +1042,72 @@ def api_admin_feedback():
         'aggregated': [dict(r) for r in aggregated],
         'recent': [dict(r) for r in recent]
     })
+
+
+# ─── Admin Timetable ──────────────────────────────────────────────
+
+@app.route('/admin/timetable')
+@admin_required
+def admin_timetable():
+    return render_template('admin_timetable.html')
+
+
+@app.route('/api/admin/timetable', methods=['GET'])
+@admin_required
+def api_admin_timetable_get():
+    conn = get_db()
+    rows = conn.execute(
+        "SELECT * FROM timetable ORDER BY exam_date ASC"
+    ).fetchall()
+    conn.close()
+    return jsonify([dict(r) for r in rows])
+
+
+@app.route('/api/admin/timetable', methods=['POST'])
+@admin_required
+def api_admin_timetable_post():
+    data = request.get_json()
+    exam_name = data.get('exam_name', '').strip()
+    exam_date = data.get('exam_date', '').strip()
+    if not exam_name or not exam_date:
+        return jsonify({'error': 'exam_name and exam_date are required'}), 400
+    conn = get_db()
+    conn.execute(
+        "INSERT INTO timetable (exam_name, exam_date, branch, semester, note) VALUES (?, ?, ?, ?, ?)",
+        (exam_name, exam_date, data.get('branch', 'All'), data.get('semester', ''), data.get('note', ''))
+    )
+    conn.commit()
+    conn.close()
+    return jsonify({'success': True})
+
+
+@app.route('/api/admin/timetable/<int:entry_id>', methods=['PUT'])
+@admin_required
+def api_admin_timetable_put(entry_id):
+    data = request.get_json()
+    exam_name = data.get('exam_name', '').strip()
+    exam_date = data.get('exam_date', '').strip()
+    if not exam_name or not exam_date:
+        return jsonify({'error': 'exam_name and exam_date are required'}), 400
+    conn = get_db()
+    conn.execute(
+        "UPDATE timetable SET exam_name=?, exam_date=?, branch=?, semester=?, note=?, is_active=? WHERE id=?",
+        (exam_name, exam_date, data.get('branch', 'All'), data.get('semester', ''),
+         data.get('note', ''), int(data.get('is_active', 1)), entry_id)
+    )
+    conn.commit()
+    conn.close()
+    return jsonify({'success': True})
+
+
+@app.route('/api/admin/timetable/<int:entry_id>', methods=['DELETE'])
+@admin_required
+def api_admin_timetable_delete(entry_id):
+    conn = get_db()
+    conn.execute("DELETE FROM timetable WHERE id=?", (entry_id,))
+    conn.commit()
+    conn.close()
+    return jsonify({'success': True})
 
 
 # ─── Profile + Mood Tracker ───────────────────────────────────────

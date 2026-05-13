@@ -7,37 +7,316 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <div class="auth-page">
-        <div class="auth-container">
-            <div class="auth-logo">
-                <h1>CampusConnect AI + MindMate AI</h1>
-                <p>Your AI companion for campus queries & emotional support</p>
+<div class="auth-page auth-split">
+
+    <!-- ══════════ LEFT: Creative Info Panel ══════════ -->
+    <div class="auth-info-panel">
+
+        <!-- Animated background blobs -->
+        <div class="aip-blob aip-blob-1"></div>
+        <div class="aip-blob aip-blob-2"></div>
+        <div class="aip-blob aip-blob-3"></div>
+
+        <!-- Header -->
+        <div class="aip-header">
+            <div class="aip-campus-chip">
+                <span class="aip-chip-dot"></span>
+                JSPM University · Wagholi Campus
             </div>
 
-            {% with messages = get_flashed_messages(with_categories=true) %}
-            {% if messages %}
-                {% for category, message in messages %}
-                <div class="flash-message flash-{{ category }}">{{ message }}</div>
-                {% endfor %}
-            {% endif %}
-            {% endwith %}
+            <div class="aip-logo-wrap">
+                <div class="aip-logo-ring"></div>
+                <span class="aip-logo-emoji">🎓</span>
+            </div>
 
-            <form method="POST" action="{{ url_for('login') }}">
-                <div class="form-group">
-                    <label for="username">Username</label>
-                    <input type="text" id="username" name="username" placeholder="Enter your username" required autofocus>
-                </div>
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
-                </div>
-                <button type="submit" class="btn btn-primary">Sign In</button>
-            </form>
+            <h2 class="aip-title">
+                CampusConnect AI
+                <span class="aip-title-accent">+ MindMate AI</span>
+            </h2>
 
-            <div class="auth-footer">
-                Don't have an account? <a href="{{ url_for('signup') }}">Create one</a>
+            <p class="aip-tagline">
+                <span id="aipTyping"></span><span class="aip-cursor">|</span>
+            </p>
+        </div>
+
+        <!-- Stats Row -->
+        <div class="aip-stats">
+            <div class="aip-stat">
+                <span class="aip-stat-num">100+</span>
+                <span class="aip-stat-label">FAQs</span>
+            </div>
+            <div class="aip-stat">
+                <span class="aip-stat-num">3</span>
+                <span class="aip-stat-label">Languages</span>
+            </div>
+            <div class="aip-stat">
+                <span class="aip-stat-num">31</span>
+                <span class="aip-stat-label">Map Spots</span>
+            </div>
+            <div class="aip-stat">
+                <span class="aip-stat-num">10</span>
+                <span class="aip-stat-label">Mood Topics</span>
             </div>
         </div>
+
+        <!-- Section divider -->
+        <div class="aip-section-divider"><span>Features</span></div>
+
+        <!-- Scrolling feature cards -->
+        <div class="aip-scroll-wrapper">
+            <div class="aip-scroll-track">
+
+                <div class="aip-card aip-card--blue">
+                    <div class="aip-icon-bubble aip-bubble--blue">🤖</div>
+                    <div class="aip-card-body">
+                        <div class="aip-card-top">
+                            <h4>CampusConnect AI</h4>
+                            <span class="aip-badge aip-badge--blue">AI</span>
+                        </div>
+                        <p>Ask anything about JSPM Wagholi — admissions, fees, courses, hostel, placements, library, transport, exams. 100+ FAQs answered instantly.</p>
+                    </div>
+                </div>
+
+                <div class="aip-card aip-card--pink">
+                    <div class="aip-icon-bubble aip-bubble--pink">💙</div>
+                    <div class="aip-card-body">
+                        <div class="aip-card-top">
+                            <h4>MindMate AI</h4>
+                            <span class="aip-badge aip-badge--pink">Health</span>
+                        </div>
+                        <p>A safe, empathetic space for stress, anxiety, academic pressure, loneliness, or motivation. Crisis detection built in for your safety.</p>
+                    </div>
+                </div>
+
+                <div class="aip-card aip-card--teal">
+                    <div class="aip-icon-bubble aip-bubble--teal">🌐</div>
+                    <div class="aip-card-body">
+                        <div class="aip-card-top">
+                            <h4>Trilingual Support</h4>
+                            <span class="aip-badge aip-badge--teal">i18n</span>
+                        </div>
+                        <p>Chat in English, Hindi, or Marathi. All FAQs have human-written translations in all three languages. Switch anytime.</p>
+                    </div>
+                </div>
+
+                <div class="aip-card aip-card--purple">
+                    <div class="aip-icon-bubble aip-bubble--purple">🎙️</div>
+                    <div class="aip-card-body">
+                        <div class="aip-card-top">
+                            <h4>Voice Input</h4>
+                            <span class="aip-badge aip-badge--purple">Voice</span>
+                        </div>
+                        <p>Speak your question instead of typing. Voice recognition adapts to your selected language automatically.</p>
+                    </div>
+                </div>
+
+                <div class="aip-card aip-card--blue">
+                    <div class="aip-icon-bubble aip-bubble--blue">🗺️</div>
+                    <div class="aip-card-body">
+                        <div class="aip-card-top">
+                            <h4>Interactive Campus Map</h4>
+                            <span class="aip-badge aip-badge--blue">Map</span>
+                        </div>
+                        <p>31 GPS-accurate markers across the Wagholi campus — academic blocks, library, hostels, canteen, sports and more.</p>
+                    </div>
+                </div>
+
+                <div class="aip-card aip-card--orange">
+                    <div class="aip-icon-bubble aip-bubble--orange">⏳</div>
+                    <div class="aip-card-body">
+                        <div class="aip-card-top">
+                            <h4>Exam Countdown</h4>
+                            <span class="aip-badge aip-badge--orange">Timer</span>
+                        </div>
+                        <p>Live countdown to your next SPPU exam on your dashboard. Never miss an important date again.</p>
+                    </div>
+                </div>
+
+                <div class="aip-card aip-card--teal">
+                    <div class="aip-icon-bubble aip-bubble--teal">🍱</div>
+                    <div class="aip-card-body">
+                        <div class="aip-card-top">
+                            <h4>Canteen Menu</h4>
+                            <span class="aip-badge aip-badge--teal">Food</span>
+                        </div>
+                        <p>Today's breakfast, lunch, snacks, and dinner from the campus canteen — updated daily by admin.</p>
+                    </div>
+                </div>
+
+                <div class="aip-card aip-card--pink">
+                    <div class="aip-icon-bubble aip-bubble--pink">📦</div>
+                    <div class="aip-card-body">
+                        <div class="aip-card-top">
+                            <h4>Lost &amp; Found Board</h4>
+                            <span class="aip-badge aip-badge--pink">Board</span>
+                        </div>
+                        <p>Post lost or found items, browse active listings, mark as resolved. All within the campus community.</p>
+                    </div>
+                </div>
+
+                <div class="aip-card aip-card--purple">
+                    <div class="aip-icon-bubble aip-bubble--purple">⭐</div>
+                    <div class="aip-card-body">
+                        <div class="aip-card-top">
+                            <h4>Faculty Feedback</h4>
+                            <span class="aip-badge aip-badge--purple">Poll</span>
+                        </div>
+                        <p>Rate your subject and faculty 1–5 stars with an optional comment. Completely anonymous — identity never stored.</p>
+                    </div>
+                </div>
+
+                <div class="aip-card aip-card--orange">
+                    <div class="aip-icon-bubble aip-bubble--orange">📊</div>
+                    <div class="aip-card-body">
+                        <div class="aip-card-top">
+                            <h4>Mood Tracker</h4>
+                            <span class="aip-badge aip-badge--orange">Tracker</span>
+                        </div>
+                        <p>MindMate logs emotional trends over time. View your weekly mood chart and distribution on your profile page.</p>
+                    </div>
+                </div>
+
+                <div class="aip-card aip-card--blue">
+                    <div class="aip-icon-bubble aip-bubble--blue">📅</div>
+                    <div class="aip-card-body">
+                        <div class="aip-card-top">
+                            <h4>Academic Calendar</h4>
+                            <span class="aip-badge aip-badge--blue">Docs</span>
+                        </div>
+                        <p>Full 2025–26 academic calendar as an embedded PDF — holidays, exam schedules, and important dates at a glance.</p>
+                    </div>
+                </div>
+
+                <div class="aip-card aip-card--teal">
+                    <div class="aip-icon-bubble aip-bubble--teal">🔒</div>
+                    <div class="aip-card-body">
+                        <div class="aip-card-top">
+                            <h4>Secure &amp; Private</h4>
+                            <span class="aip-badge aip-badge--teal">Security</span>
+                        </div>
+                        <p>Passwords are bcrypt-hashed. Sessions auto-expire at 35 min. Rate limiting prevents abuse. Your data is protected.</p>
+                    </div>
+                </div>
+
+                <!-- Duplicate for seamless loop -->
+                <div class="aip-card aip-card--blue">
+                    <div class="aip-icon-bubble aip-bubble--blue">🤖</div>
+                    <div class="aip-card-body">
+                        <div class="aip-card-top"><h4>CampusConnect AI</h4><span class="aip-badge aip-badge--blue">AI</span></div>
+                        <p>Ask anything about JSPM Wagholi — admissions, fees, courses, hostel, placements, library, transport, exams. 100+ FAQs answered instantly.</p>
+                    </div>
+                </div>
+                <div class="aip-card aip-card--pink">
+                    <div class="aip-icon-bubble aip-bubble--pink">💙</div>
+                    <div class="aip-card-body">
+                        <div class="aip-card-top"><h4>MindMate AI</h4><span class="aip-badge aip-badge--pink">Health</span></div>
+                        <p>A safe, empathetic space for stress, anxiety, academic pressure, loneliness, or motivation. Crisis detection built in.</p>
+                    </div>
+                </div>
+                <div class="aip-card aip-card--teal">
+                    <div class="aip-icon-bubble aip-bubble--teal">🌐</div>
+                    <div class="aip-card-body">
+                        <div class="aip-card-top"><h4>Trilingual Support</h4><span class="aip-badge aip-badge--teal">i18n</span></div>
+                        <p>Chat in English, Hindi, or Marathi. All FAQs have human-written translations in all three languages.</p>
+                    </div>
+                </div>
+                <div class="aip-card aip-card--purple">
+                    <div class="aip-icon-bubble aip-bubble--purple">🎙️</div>
+                    <div class="aip-card-body">
+                        <div class="aip-card-top"><h4>Voice Input</h4><span class="aip-badge aip-badge--purple">Voice</span></div>
+                        <p>Speak your question instead of typing. Voice recognition adapts to your selected language automatically.</p>
+                    </div>
+                </div>
+                <div class="aip-card aip-card--blue">
+                    <div class="aip-icon-bubble aip-bubble--blue">🗺️</div>
+                    <div class="aip-card-body">
+                        <div class="aip-card-top"><h4>Interactive Campus Map</h4><span class="aip-badge aip-badge--blue">Map</span></div>
+                        <p>31 GPS-accurate markers — academic blocks, library, hostels, canteen, sports and more.</p>
+                    </div>
+                </div>
+                <div class="aip-card aip-card--orange">
+                    <div class="aip-icon-bubble aip-bubble--orange">⏳</div>
+                    <div class="aip-card-body">
+                        <div class="aip-card-top"><h4>Exam Countdown</h4><span class="aip-badge aip-badge--orange">Timer</span></div>
+                        <p>Live countdown to your next SPPU exam on your dashboard. Never miss an important date again.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Scrolling tag strip -->
+        <div class="aip-tag-strip">
+            <div class="aip-tag-track">
+                <span>🤖 Campus AI</span><span>💙 Mental Health</span>
+                <span>🌐 Trilingual</span><span>🎙️ Voice</span>
+                <span>🗺️ Campus Map</span><span>⏳ Countdown</span>
+                <span>🍱 Canteen</span><span>📦 Lost & Found</span>
+                <span>📊 Mood Tracker</span><span>🔒 Secure</span>
+                <span>🤖 Campus AI</span><span>💙 Mental Health</span>
+                <span>🌐 Trilingual</span><span>🎙️ Voice</span>
+                <span>🗺️ Campus Map</span><span>⏳ Countdown</span>
+                <span>🍱 Canteen</span><span>📦 Lost & Found</span>
+                <span>📊 Mood Tracker</span><span>🔒 Secure</span>
+            </div>
+        </div>
+
+    </div><!-- end auth-info-panel -->
+
+    <!-- ══════════ RIGHT: Login Form ══════════ -->
+    <div class="auth-container">
+        <div class="auth-logo">
+            <h1>Welcome Back</h1>
+            <p>Sign in to your campus account</p>
+        </div>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+            <div class="flash-message flash-{{ category }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
+
+        <form method="POST" action="{{ url_for('login') }}">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username"
+                       placeholder="Enter your username" required autofocus>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password"
+                       placeholder="Enter your password" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Sign In</button>
+        </form>
+
+        <div class="auth-footer">
+            Don't have an account? <a href="{{ url_for('signup') }}">Create one</a>
+        </div>
     </div>
+
+</div><!-- end auth-split -->
+
+<script>
+const phrases = [
+    'Instant answers for campus life',
+    'Mental health support, 24/7',
+    'English · Hindi · Marathi',
+    'Your AI campus companion',
+    'Voice-enabled smart chatbot',
+];
+let pi = 0, ci = 0, del = false;
+const el = document.getElementById('aipTyping');
+function type() {
+    const p = phrases[pi];
+    el.textContent = del ? p.slice(0, --ci) : p.slice(0, ++ci);
+    if (!del && ci === p.length)  { del = true;  return setTimeout(type, 2000); }
+    if (del  && ci === 0)         { del = false; pi = (pi + 1) % phrases.length; }
+    setTimeout(type, del ? 38 : 65);
+}
+type();
+</script>
 </body>
 </html>

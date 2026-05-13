@@ -19,6 +19,7 @@
             <a href="{{ url_for('admin_canteen') }}">Canteen</a>
             <a href="{{ url_for('admin_feedback') }}">Feedback</a>
             <a href="{{ url_for('admin_map') }}">Map</a>
+            <a href="{{ url_for('admin_timetable') }}">Timetable</a>
             <button class="theme-toggle" onclick="toggleTheme()">&#9790;</button>
             <a href="{{ url_for('logout') }}">Logout</a>
         </div>
@@ -65,6 +66,11 @@
                 <div class="tool-icon">&#128205;</div>
                 <div class="tool-label">Map Editor</div>
                 <div class="tool-sub">Edit campus building names</div>
+            </a>
+            <a href="{{ url_for('admin_timetable') }}" class="admin-tool-card" style="border-top-color:#4299E1;">
+                <div class="tool-icon">&#128197;</div>
+                <div class="tool-label">Timetable</div>
+                <div class="tool-sub">Manage exam schedule</div>
             </a>
         </div>
 

@@ -178,6 +178,20 @@ def init_db():
         )
     ''')
 
+    # College timetable / exam schedule (admin-managed)
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS timetable (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            exam_name TEXT NOT NULL,
+            exam_date TEXT NOT NULL,
+            branch TEXT DEFAULT 'All',
+            semester TEXT DEFAULT '',
+            note TEXT DEFAULT '',
+            is_active INTEGER DEFAULT 1,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )
+    ''')
+
     conn.commit()
     conn.close()
 
