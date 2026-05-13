@@ -1,4 +1,4 @@
-# JSPM Wagholi Campus Chatbot + MindMate AI
+# CampusConnect AI + MindMate AI
 
 A dual-bot Flask web application providing **campus information** and **mental health support** for students at JSPM University, Wagholi Campus, Pune.
 
@@ -8,15 +8,15 @@ A dual-bot Flask web application providing **campus information** and **mental h
 
 ## Project Description (For Resume)
 
-> **CampusConnect & MindMate AI** — Built a full-stack AI-powered dual-chatbot web application using **Flask, Python, NLP, and SQLite**. The system features two intelligent bots: **CampusConnect AI**, which answers 100+ campus FAQs using semantic search powered by sentence-transformers (all-MiniLM-L6-v2) with cosine similarity matching, and **MindMate AI**, a mental health support bot with crisis detection and weighted keyword classification across 10 emotional categories. Implemented **trilingual support** (English, Hindi, Marathi) with human-written translations, **voice input** via Web Speech API, **bcrypt-based authentication** with role-based access control, and a comprehensive **admin panel** with analytics dashboards, conversation monitoring, security logging, canteen menu management, faculty feedback analytics, and an interactive **campus map editor**. Additional student utility features include an SPPU exam countdown widget, Lost & Found board, anonymous faculty feedback polls, and a personal profile page with a MindMate mood tracker (Chart.js). The NLP pipeline includes a graceful **offline fallback** from ML-based semantic search to keyword matching, ensuring 100% uptime regardless of model availability. Deployed on **Railway** with Gunicorn.
+> **CampusConnect & MindMate AI** — Built a full-stack AI-powered dual-chatbot web application using **Flask, Python, NLP, and SQLite**. The system features two intelligent bots: **CampusConnect AI**, which answers 100+ campus FAQs using semantic search powered by sentence-transformers (all-MiniLM-L6-v2) with cosine similarity matching, and **MindMate AI**, a mental health support bot with crisis detection and weighted keyword classification across 10 emotional categories. Implemented **trilingual support** (English, Hindi, Marathi) with human-written translations, **voice input** via Web Speech API, **bcrypt-based authentication** with role-based access control, and a comprehensive **admin panel** with analytics dashboards, conversation monitoring, security logging, canteen menu management, exam timetable management (with PDF upload), faculty feedback analytics, and an interactive **campus map editor**. Additional student utility features include an SPPU exam countdown widget, academic calendar PDF viewer, Lost & Found board, anonymous faculty feedback polls, and a personal profile page with a MindMate mood tracker (Chart.js). The NLP pipeline includes a graceful **offline fallback** from ML-based semantic search to keyword matching, ensuring 100% uptime regardless of model availability. Deployed on **Railway** with Gunicorn.
 >
 > **Key Technologies:** Python, Flask, SQLite, sentence-transformers (PyTorch), NLP, bcrypt, REST APIs, Jinja2, Vanilla JavaScript, CSS3, Chart.js, Leaflet.js, Gunicorn, Railway
 >
 > **Highlights:**
 > - Designed and implemented a semantic search engine with 384-dimensional embeddings and confidence-scored responses
 > - Built a mental health bot with priority-based crisis detection, mood logging, and weekly mood trend charts
-> - Developed a full admin dashboard with real-time analytics, conversation tracking, security monitoring, canteen management, feedback analytics, and a live map marker editor
-> - Engineered student utility tools: exam countdown timer, Lost & Found board, canteen menu widget, anonymous faculty feedback poll
+> - Developed a full admin dashboard with real-time analytics, conversation tracking, security monitoring, canteen management, exam timetable with PDF upload, feedback analytics, and a live map marker editor
+> - Engineered student utility tools: exam countdown timer, academic calendar PDF viewer, Lost & Found board, canteen menu widget, anonymous faculty feedback poll
 > - Engineered an offline-resilient architecture with automatic ML-to-keyword fallback
 > - Supported 3 languages with voice input across all interfaces
 
@@ -37,7 +37,6 @@ A dual-bot Flask web application providing **campus information** and **mental h
 - [API Endpoints](#api-endpoints)
 - [Environment Variables](#environment-variables)
 - [Troubleshooting](#troubleshooting)
-- [License](#license)
 
 ---
 
@@ -60,6 +59,7 @@ A dual-bot Flask web application providing **campus information** and **mental h
 ### Student Utility Tools
 - **Exam Countdown Widget** — Live countdown to the next SPPU exam on the dashboard, loaded from `exam_dates.json`
 - **Canteen Menu of the Day** — Today's menu displayed on the dashboard; admins update it via the admin panel
+- **Academic Calendar** — Full 2025–26 JSPM academic calendar as an embedded PDF viewer (holidays, exam schedules, key dates)
 - **Lost & Found Board** — Students post lost/found items; filter by type; mark as resolved
 - **Anonymous Faculty Feedback Poll** — Rate any subject/faculty (1–5 stars) with optional comments; identity never stored
 - **My Profile Page** — Displays account info, chat stats, and a Chart.js weekly mood trend chart + distribution doughnut from MindMate sessions
@@ -76,6 +76,7 @@ A dual-bot Flask web application providing **campus information** and **mental h
 
 ### User System
 - Signup / Login with **bcrypt-hashed** passwords
+- Creative animated info panel on login/signup pages showcasing all platform features
 - Session-based authentication with role support (`user` / `admin`)
 - **Session timeout warning modal** — warns at 30 min, auto-logs out at 35 min; resets on any user action
 - Chat history per user (last 50 messages)
@@ -95,6 +96,7 @@ A dual-bot Flask web application providing **campus information** and **mental h
 - **Conversations** — Browse all chats, most-asked questions, per-user activity, reviews & ratings
 - **Security** — Login logs, suspicious IP detection (3+ failed attempts in 24h), hourly login charts
 - **Canteen Menu Editor** — Add/remove menu items per meal category per date; students see today's menu on the dashboard
+- **Exam Timetable Editor** — Full CRUD for exam schedule entries; upload a timetable PDF that students can view
 - **Faculty Feedback Viewer** — Aggregated ratings by subject/faculty, rating distribution chart, recent comments
 - **Map Editor** — Edit building names and descriptions inline, add/delete markers, save to JSON; changes reflect on the live map instantly
 
@@ -128,7 +130,7 @@ A dual-bot Flask web application providing **campus information** and **mental h
 ## Project Structure
 
 ```
-jspm-wagholi-chatbot/
+CampusConnect-AI/
 ├── app.py                          # Main Flask app — routes, auth, APIs
 ├── create_admin.py                 # Script to bootstrap admin user
 ├── requirements.txt                # Python dependencies
@@ -139,7 +141,7 @@ jspm-wagholi-chatbot/
 ├── README.md                       # This file
 │
 ├── models/
-│   └── database.py                 # SQLite schema (11 tables), connection helpers, data loader
+│   └── database.py                 # SQLite schema (12 tables), connection helpers, data loader
 │
 ├── utils/
 │   ├── auth.py                     # hash_password() and check_password() using bcrypt
@@ -153,16 +155,17 @@ jspm-wagholi-chatbot/
 │   ├── campus_dataset.json         # Additional campus data
 │   ├── campus_markers.json         # Map marker data (editable via admin panel)
 │   ├── exam_dates.json             # SPPU exam dates for countdown widget
-│   └── kaggle_mental_health_raw.json # Raw training data
+│   └── kaggle_mental_health_raw.json
 │
-├── templates/                      # 19 Jinja2 HTML templates
-│   ├── login.html                  # Login page
-│   ├── signup.html                 # Registration (with password strength meter)
+├── templates/                      # 21 Jinja2 HTML templates
+│   ├── login.html                  # Login page with animated feature info panel
+│   ├── signup.html                 # Registration (password strength meter + info panel)
 │   ├── dashboard.html              # Main dashboard — bot cards, exam countdown, canteen widget, onboarding tour
 │   ├── select_language.html        # Language picker (EN / HI / MR)
 │   ├── campus_chat.html            # CampusConnect AI chat interface
 │   ├── mindmate_chat.html          # MindMate AI chat interface
 │   ├── campus_map.html             # Interactive Leaflet.js campus map
+│   ├── academic_calendar.html      # Embedded PDF viewer for 2025–26 academic calendar
 │   ├── contact.html                # Contact form + embedded map
 │   ├── lost_found.html             # Lost & Found board
 │   ├── feedback_poll.html          # Anonymous faculty feedback poll
@@ -173,6 +176,7 @@ jspm-wagholi-chatbot/
 │   ├── admin_conversations.html    # Admin conversation browser
 │   ├── admin_security.html         # Admin security/login logs
 │   ├── admin_canteen.html          # Admin canteen menu editor
+│   ├── admin_timetable.html        # Admin exam timetable editor + PDF upload
 │   ├── admin_feedback.html         # Admin faculty feedback viewer
 │   └── admin_map.html              # Admin campus map marker editor
 │
@@ -186,8 +190,11 @@ jspm-wagholi-chatbot/
     │   ├── session_timeout.js      # 30-min inactivity warning modal
     │   └── map/
     │       └── wagholi_map.js      # Campus map — fetches markers from API, renders Leaflet
-    └── images/
-        └── campus-bg.jpg           # Campus background image
+    ├── images/
+    │   └── campus-bg.jpg
+    └── docs/
+        ├── academic_calendar_2025_26.pdf   # Embedded academic calendar
+        └── timetable.pdf                   # Admin-uploaded exam timetable (auto-created)
 ```
 
 ---
@@ -202,8 +209,8 @@ jspm-wagholi-chatbot/
 
 ```bash
 # Clone the repository
-git clone https://github.com/mitali1711-2003/jspm-wagholi-chatbot.git
-cd jspm-wagholi-chatbot
+git clone https://github.com/mitali1711-2003/CampusConnect-AI.git
+cd CampusConnect-AI
 
 # Create virtual environment
 python3 -m venv venv
@@ -254,7 +261,7 @@ python create_admin.py
 
 1. Push your code to GitHub
 2. Go to [railway.app](https://railway.app) and sign in with GitHub
-3. Click **New Project** → **Deploy from GitHub Repo** → Select `jspm-wagholi-chatbot`
+3. Click **New Project** → **Deploy from GitHub Repo** → Select `CampusConnect-AI`
 4. Railway auto-detects `railway.json` and builds the app
 5. Go to **Settings → Networking → Generate Domain** to get your public URL
 6. Add environment variables in the **Variables** tab:
@@ -278,6 +285,7 @@ The `railway.json` config pre-downloads the ML model during build, uses gunicorn
 | `PORT` | Auto | `5000` | Set automatically by Railway/Render |
 | `HF_HUB_OFFLINE` | No | `1` | Prevents HuggingFace network calls (uses cached model) |
 | `TRANSFORMERS_OFFLINE` | No | `1` | Same as above for transformers library |
+| `VERCEL` | Auto | — | Set by Vercel; switches DB and uploads to `/tmp/` |
 
 > **Note:** SQLite is ephemeral on Railway/Render — the database is re-created and seeded from JSON on every deploy. User accounts won't persist across redeploys. Fine for demos.
 
@@ -294,8 +302,18 @@ Access at `/admin` (requires admin role). The admin hub shows quick-access cards
 | Conversations | `/admin/conversations` | All chats with filters, most-asked questions, per-user activity, reviews |
 | Security | `/admin/security` | Login logs, suspicious IPs/users (3+ failures in 24h), hourly login charts |
 | Canteen Menu | `/admin/canteen` | Add/remove menu items per category (breakfast/lunch/snacks/dinner) per date |
+| Exam Timetable | `/admin/timetable` | Add/edit/delete exam schedule entries; upload timetable PDF for students |
 | Faculty Feedback | `/admin/feedback` | Aggregated ratings by subject & faculty, rating distribution chart, recent comments |
 | Map Editor | `/admin/map` | Edit building names/descriptions inline, add/delete markers, save to `campus_markers.json` |
+
+### Timetable PDF Upload
+
+In the timetable admin page, a **PDF Upload** card lets admins:
+- Upload a PDF timetable (replaces any previously uploaded file)
+- Preview the live PDF in a new tab
+- Remove the PDF if needed
+
+Students can view the uploaded PDF at `/timetable-pdf` (login required).
 
 ### FAQ JSON Upload Format
 
@@ -320,7 +338,7 @@ Access at `/admin` (requires admin role). The admin hub shows quick-access cards
 
 ## Database Schema
 
-The app uses **SQLite3** with 11 tables, auto-created on startup:
+The app uses **SQLite3** with 12 tables, auto-created on startup:
 
 | Table | Purpose |
 |-------|---------|
@@ -335,6 +353,7 @@ The app uses **SQLite3** with 11 tables, auto-created on startup:
 | `canteen_menu` | Daily canteen menu items (date, category, item name, price) |
 | `faculty_feedback` | Anonymous faculty ratings (subject, faculty name, rating 1–5, comment) |
 | `mood_logs` | MindMate emotional category logs per user per message (for profile chart) |
+| `timetable` | Exam schedule entries (exam name, date, branch, semester, note, active flag) |
 
 ---
 
@@ -395,6 +414,8 @@ All 100+ FAQs have human-written translations in all 3 languages. Auto language 
 | GET | `/chat/campus` | CampusConnect AI chat |
 | GET | `/chat/mindmate` | MindMate AI chat |
 | GET | `/campus-map` | Interactive campus map |
+| GET | `/academic-calendar` | Embedded academic calendar PDF viewer |
+| GET | `/timetable-pdf` | View admin-uploaded exam timetable PDF |
 | GET | `/contact` | Contact form |
 | GET | `/lost-found` | Lost & Found board |
 | GET | `/feedback` | Anonymous faculty feedback form |
@@ -411,7 +432,6 @@ All 100+ FAQs have human-written translations in all 3 languages. Auto language 
 | POST | `/api/review` | Submit star rating |
 | POST | `/api/contact` | Submit contact form |
 | POST | `/api/set-language` | Set session language |
-| GET | `/api/lost-found` | — (items served via template) |
 | POST | `/api/lost-found` | Post a lost/found item |
 | POST | `/api/lost-found/<id>/resolve` | Mark item as resolved |
 | GET | `/api/canteen/today` | Today's canteen menu |
@@ -434,6 +454,13 @@ All 100+ FAQs have human-written translations in all 3 languages. Auto language 
 | GET | `/api/admin/canteen` | Get canteen menu by date |
 | POST | `/api/admin/canteen` | Add menu item |
 | DELETE | `/api/admin/canteen/<id>` | Remove menu item |
+| GET | `/api/admin/timetable` | List all timetable entries |
+| POST | `/api/admin/timetable` | Create timetable entry |
+| PUT | `/api/admin/timetable/<id>` | Update timetable entry |
+| DELETE | `/api/admin/timetable/<id>` | Delete timetable entry |
+| GET | `/api/admin/timetable/pdf-status` | Check if timetable PDF is uploaded |
+| POST | `/api/admin/timetable/upload-pdf` | Upload timetable PDF |
+| DELETE | `/api/admin/timetable/delete-pdf` | Remove timetable PDF |
 | GET | `/api/admin/feedback` | Aggregated faculty feedback |
 | POST | `/api/admin/campus-markers` | Save edited map markers |
 
@@ -448,6 +475,7 @@ All 100+ FAQs have human-written translations in all 3 languages. Auto language 
 | `PORT` | No | `5000` | Auto-set by Railway/Render |
 | `HF_HUB_OFFLINE` | No | `1` | Use cached HuggingFace model |
 | `TRANSFORMERS_OFFLINE` | No | `1` | Same for transformers |
+| `VERCEL` | Auto | — | Switches DB and file uploads to `/tmp/` |
 
 ---
 
@@ -482,12 +510,10 @@ python create_admin.py
 
 ---
 
-## License
+## About This Project
 
-Developed for educational purposes at JSPM University, Wagholi Campus, Pune.
+Full-stack AI-powered dual-chatbot platform for JSPM University's Wagholi Campus combining **CampusConnect AI** (semantic FAQ search) with **MindMate AI** (mental health support with mood tracking). Features trilingual support, voice input, an exam countdown, academic calendar viewer, canteen menu, lost & found board, anonymous faculty feedback, a profile page with mood charts, and a comprehensive admin panel with exam timetable management (including PDF upload) and a live map editor. Built with Python, Flask, SQLite, sentence-transformers, Chart.js, and Leaflet.js.
 
 ---
 
-## About This Project
-
-Full-stack AI-powered dual-chatbot platform for JSPM University's Wagholi Campus combining **CampusConnect AI** (semantic FAQ search) with **MindMate AI** (mental health support with mood tracking). Features trilingual support, voice input, an exam countdown, canteen menu, lost & found board, anonymous faculty feedback, a profile page with mood charts, and a comprehensive admin panel with a live map editor. Built with Python, Flask, SQLite, sentence-transformers, Chart.js, and Leaflet.js.
+*Developed for educational purposes at JSPM University, Wagholi Campus, Pune.*
